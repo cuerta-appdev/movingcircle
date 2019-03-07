@@ -1,6 +1,6 @@
 ActiveAdmin.register FurtnitureObject do
 
- permit_params :price, :description, :furniture_pack_id, :category_id, :name
+ permit_params :price, :description, :furniture_pack_id, :furniture_category_id, :name
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

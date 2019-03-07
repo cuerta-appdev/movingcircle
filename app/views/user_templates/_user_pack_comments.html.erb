@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Pack Comments
+
+    <a data-toggle="collapse" href="#user_pack_comments_new_form">
+      Add pack comment
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.pack_comments.each do |pack_comment| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/pack_comments/<%= pack_comment.id %>">
+          <%= pack_comment.furniture_pack_id %>
+        </a>
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

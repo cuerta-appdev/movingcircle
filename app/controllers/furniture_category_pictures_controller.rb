@@ -21,7 +21,7 @@ class FurnitureCategoryPicturesController < ApplicationController
   def create_row
     @furniture_category_picture = FurnitureCategoryPicture.new
 
-    @furniture_category_picture.category_id = params.fetch("category_id")
+    @furniture_category_picture.furniture_category_id = params.fetch("furniture_category_id")
     @furniture_category_picture.picture = params.fetch("picture") if params.key?("picture")
 
     if @furniture_category_picture.valid?
@@ -36,13 +36,13 @@ class FurnitureCategoryPicturesController < ApplicationController
   def create_row_from_furniture_category
     @furniture_category_picture = FurnitureCategoryPicture.new
 
-    @furniture_category_picture.category_id = params.fetch("category_id")
+    @furniture_category_picture.furniture_category_id = params.fetch("furniture_category_id")
     @furniture_category_picture.picture = params.fetch("picture") if params.key?("picture")
 
     if @furniture_category_picture.valid?
       @furniture_category_picture.save
 
-      redirect_to("/furniture_categories/#{@furniture_category_picture.category_id}", notice: "FurnitureCategoryPicture created successfully.")
+      redirect_to("/furniture_categories/#{@furniture_category_picture.furniture_category_id}", notice: "FurnitureCategoryPicture created successfully.")
     else
       render("furniture_category_picture_templates/new_form_with_errors.html.erb")
     end
@@ -57,7 +57,7 @@ class FurnitureCategoryPicturesController < ApplicationController
   def update_row
     @furniture_category_picture = FurnitureCategoryPicture.find(params.fetch("id_to_modify"))
 
-    @furniture_category_picture.category_id = params.fetch("category_id")
+    @furniture_category_picture.furniture_category_id = params.fetch("furniture_category_id")
     @furniture_category_picture.picture = params.fetch("picture") if params.key?("picture")
 
     if @furniture_category_picture.valid?
@@ -74,7 +74,7 @@ class FurnitureCategoryPicturesController < ApplicationController
 
     @furniture_category_picture.destroy
 
-    redirect_to("/furniture_categories/#{@furniture_category_picture.category_id}", notice: "FurnitureCategoryPicture deleted successfully.")
+    redirect_to("/furniture_categories/#{@furniture_category_picture.furniture_category_id}", notice: "FurnitureCategoryPicture deleted successfully.")
   end
 
   def destroy_row

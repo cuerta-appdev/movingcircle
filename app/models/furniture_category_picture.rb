@@ -4,7 +4,8 @@ class FurnitureCategoryPicture < ApplicationRecord
   # Direct associations
 
   belongs_to :category,
-             :class_name => "FurnitureCategory"
+             :class_name => "FurnitureCategory",
+             :foreign_key => "furniture_category_id"
 
   # Indirect associations
 

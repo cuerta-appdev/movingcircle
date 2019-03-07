@@ -2,6 +2,50 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root :to => "apartments#index"
+  # Routes for the Pack comment resource:
+
+  # CREATE
+  get("/pack_comments/new", { :controller => "pack_comments", :action => "new_form" })
+  post("/create_pack_comment", { :controller => "pack_comments", :action => "create_row" })
+  post("/create_pack_comment_from_furniture_pack", { :controller => "pack_comments", :action => "create_row_from_furniture_pack" })
+
+  # READ
+  get("/pack_comments", { :controller => "pack_comments", :action => "index" })
+  get("/pack_comments/:id_to_display", { :controller => "pack_comments", :action => "show" })
+
+  # UPDATE
+  get("/pack_comments/:prefill_with_id/edit", { :controller => "pack_comments", :action => "edit_form" })
+  post("/update_pack_comment/:id_to_modify", { :controller => "pack_comments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_pack_comment/:id_to_remove", { :controller => "pack_comments", :action => "destroy_row" })
+  get("/delete_pack_comment_from_pack/:id_to_remove", { :controller => "pack_comments", :action => "destroy_row_from_pack" })
+  get("/delete_pack_comment_from_user/:id_to_remove", { :controller => "pack_comments", :action => "destroy_row_from_user" })
+
+  #------------------------------
+
+  # Routes for the Apartment comment resource:
+
+  # CREATE
+  get("/apartment_comments/new", { :controller => "apartment_comments", :action => "new_form" })
+  post("/create_apartment_comment", { :controller => "apartment_comments", :action => "create_row" })
+  post("/create_apartment_comment_from_apartment", { :controller => "apartment_comments", :action => "create_row_from_apartment" })
+
+  # READ
+  get("/apartment_comments", { :controller => "apartment_comments", :action => "index" })
+  get("/apartment_comments/:id_to_display", { :controller => "apartment_comments", :action => "show" })
+
+  # UPDATE
+  get("/apartment_comments/:prefill_with_id/edit", { :controller => "apartment_comments", :action => "edit_form" })
+  post("/update_apartment_comment/:id_to_modify", { :controller => "apartment_comments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_apartment_comment/:id_to_remove", { :controller => "apartment_comments", :action => "destroy_row" })
+  get("/delete_apartment_comment_from_apartment/:id_to_remove", { :controller => "apartment_comments", :action => "destroy_row_from_apartment" })
+  get("/delete_apartment_comment_from_user/:id_to_remove", { :controller => "apartment_comments", :action => "destroy_row_from_user" })
+
+  #------------------------------
+
   # Routes for the Furniture category picture resource:
 
   # CREATE
@@ -197,6 +241,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/furniture_packs/new", { :controller => "furniture_packs", :action => "new_form" })
   post("/create_furniture_pack", { :controller => "furniture_packs", :action => "create_row" })
+  post("/create_furniture_pack_from_apartment", { :controller => "furniture_packs", :action => "create_row_from_apartment" })
 
   # READ
   get("/furniture_packs", { :controller => "furniture_packs", :action => "index" })
@@ -208,6 +253,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_furniture_pack/:id_to_remove", { :controller => "furniture_packs", :action => "destroy_row" })
+  get("/delete_furniture_pack_from_apartment/:id_to_remove", { :controller => "furniture_packs", :action => "destroy_row_from_apartment" })
   get("/delete_furniture_pack_from_user/:id_to_remove", { :controller => "furniture_packs", :action => "destroy_row_from_user" })
 
   #------------------------------

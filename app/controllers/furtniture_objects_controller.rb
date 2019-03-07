@@ -25,7 +25,7 @@ class FurtnitureObjectsController < ApplicationController
     @furtniture_object.price = params.fetch("price")
     @furtniture_object.description = params.fetch("description")
     @furtniture_object.furniture_pack_id = params.fetch("furniture_pack_id")
-    @furtniture_object.category_id = params.fetch("category_id")
+    @furtniture_object.furniture_category_id = params.fetch("furniture_category_id")
     @furtniture_object.name = params.fetch("name")
 
     if @furtniture_object.valid?
@@ -43,7 +43,7 @@ class FurtnitureObjectsController < ApplicationController
     @furtniture_object.price = params.fetch("price")
     @furtniture_object.description = params.fetch("description")
     @furtniture_object.furniture_pack_id = params.fetch("furniture_pack_id")
-    @furtniture_object.category_id = params.fetch("category_id")
+    @furtniture_object.furniture_category_id = params.fetch("furniture_category_id")
     @furtniture_object.name = params.fetch("name")
 
     if @furtniture_object.valid?
@@ -61,13 +61,13 @@ class FurtnitureObjectsController < ApplicationController
     @furtniture_object.price = params.fetch("price")
     @furtniture_object.description = params.fetch("description")
     @furtniture_object.furniture_pack_id = params.fetch("furniture_pack_id")
-    @furtniture_object.category_id = params.fetch("category_id")
+    @furtniture_object.furniture_category_id = params.fetch("furniture_category_id")
     @furtniture_object.name = params.fetch("name")
 
     if @furtniture_object.valid?
       @furtniture_object.save
 
-      redirect_to("/furniture_categories/#{@furtniture_object.category_id}", notice: "FurtnitureObject created successfully.")
+      redirect_to("/furniture_categories/#{@furtniture_object.furniture_category_id}", notice: "FurtnitureObject created successfully.")
     else
       render("furtniture_object_templates/new_form_with_errors.html.erb")
     end
@@ -85,7 +85,7 @@ class FurtnitureObjectsController < ApplicationController
     @furtniture_object.price = params.fetch("price")
     @furtniture_object.description = params.fetch("description")
     @furtniture_object.furniture_pack_id = params.fetch("furniture_pack_id")
-    @furtniture_object.category_id = params.fetch("category_id")
+    @furtniture_object.furniture_category_id = params.fetch("furniture_category_id")
     @furtniture_object.name = params.fetch("name")
 
     if @furtniture_object.valid?
@@ -110,7 +110,7 @@ class FurtnitureObjectsController < ApplicationController
 
     @furtniture_object.destroy
 
-    redirect_to("/furniture_categories/#{@furtniture_object.category_id}", notice: "FurtnitureObject deleted successfully.")
+    redirect_to("/furniture_categories/#{@furtniture_object.furniture_category_id}", notice: "FurtnitureObject deleted successfully.")
   end
 
   def destroy_row

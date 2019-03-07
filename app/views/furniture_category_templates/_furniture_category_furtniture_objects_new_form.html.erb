@@ -24,7 +24,7 @@
     <%= select_tag(:furniture_pack_id, options_from_collection_for_select(FurniturePack.all, :id, :description, @furtniture_object.furniture_pack_id), :class => "form-control") %>
   </div>
 
-  <input type="hidden" name="category_id" value="<%= @furniture_category.id %>">
+  <input type="hidden" name="furniture_category_id" value="<%= @furniture_category.id %>">
 
   <div class="form-group">
     <label for="name">

@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Apartment Comments
+
+    <a data-toggle="collapse" href="#apartment_apartment_comments_new_form">
+      Add apartment comment
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @apartment.apartment_comments.each do |apartment_comment| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/apartment_comments/<%= apartment_comment.id %>">
+          <%= apartment_comment.user_id %>
+        </a>
+
+        <a href="/delete_apartment_comment_from_apartment/<%= apartment_comment.id %>">
+          Delete
+        </a>
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="apartment_apartment_comments_new_form">
+        <%= render partial: "apartment_templates/apartment_apartment_comments_new_form" %>
+      </div>
+    </div>
+
+  </ul>
+</div>

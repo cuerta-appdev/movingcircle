@@ -97,6 +97,17 @@
       </dd>
 
       <dt>
+        Apartment
+      </dt>
+      <dd>
+        <% if @furniture_pack.apartment.present? %>
+          <a href="/apartments/<%= @furniture_pack.apartment_id %>">
+            <%= @furniture_pack.apartment.user_id %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
         Created at
       </dt>
       <dd>
@@ -128,5 +139,11 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "furniture_pack_templates/furniture_pack_furniture_categories" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "furniture_pack_templates/furniture_pack_pack_comments" %>
   </div>
 </div>

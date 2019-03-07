@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Apartment comment #<%= @apartment_comment.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/apartment_comments" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/apartment_comments/<%= @apartment_comment.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit apartment comment
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_apartment_comment/<%= @apartment_comment.id %>" class="btn btn-block btn-outline-secondary">
+          Delete apartment comment
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <% if @apartment_comment.user.present? %>
+          <a href="/users/<%= @apartment_comment.user_id %>">
+            <%= @apartment_comment.user.email %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Apartment
+      </dt>
+      <dd>
+        <% if @apartment_comment.apartment.present? %>
+          <a href="/apartments/<%= @apartment_comment.apartment_id %>">
+            <%= @apartment_comment.apartment.user_id %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Text
+      </dt>
+      <dd>
+        <%= @apartment_comment.text %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@apartment_comment.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@apartment_comment.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

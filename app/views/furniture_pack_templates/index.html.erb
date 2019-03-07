@@ -65,6 +65,10 @@
         </th>
 
         <th>
+          Apartment
+        </th>
+
+        <th>
           Created at
         </th>
 
@@ -120,6 +124,14 @@
 
         <td>
           <%= furniture_pack.apartment_building_name %>
+        </td>
+
+        <td>
+          <% if furniture_pack.apartment.present? %>
+            <a href="/apartments/<%= furniture_pack.apartment.id %>">
+              <%= furniture_pack.apartment.user_id %>
+            </a>
+          <% end %>
         </td>
 
         <td>

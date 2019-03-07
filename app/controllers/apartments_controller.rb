@@ -1,12 +1,14 @@
 class ApartmentsController < ApplicationController
   def index
     @q = Apartment.ransack(params[:q])
-    @apartments = @q.result(:distinct => true).includes(:user, :apartment_photos, :apartment_bookmarks, :building).page(params[:page]).per(10)
+    @apartments = @q.result(:distinct => true).includes(:user, :apartment_photos, :apartment_bookmarks, :apartment_comments, :furniture_packs, :building).page(params[:page]).per(10)
 
     render("apartment_templates/index.html.erb")
   end
 
   def show
+    @furniture_pack = FurniturePack.new
+    @apartment_comment = ApartmentComment.new
     @apartment_bookmark = ApartmentBookmark.new
     @apartment_photo = ApartmentPhoto.new
     @apartment = Apartment.find(params.fetch("id_to_display"))

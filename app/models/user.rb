@@ -1,6 +1,12 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :pack_comments,
+             :dependent => :destroy
+
+  has_many   :apartment_comments,
+             :dependent => :destroy
+
   has_many   :building_bookmarks,
              :dependent => :destroy
 

@@ -1,0 +1,105 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All apartment comments
+    </h1>
+
+    <a href="/apartment_comments/new" class="btn btn-block btn-outline-secondary">
+      Add a new apartment comment
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "apartment_comment_templates/apartment_comments_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Apartment
+        </th>
+
+        <th>
+          Text
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @apartment_comments.each do |apartment_comment| %>
+      <tr>
+        <td>
+          <%= apartment_comment.id %>
+        </td>
+
+        <td>
+          <% if apartment_comment.user.present? %>
+            <a href="/users/<%= apartment_comment.user.id %>">
+              <%= apartment_comment.user.email %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <% if apartment_comment.apartment.present? %>
+            <a href="/apartments/<%= apartment_comment.apartment.id %>">
+              <%= apartment_comment.apartment.user_id %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= apartment_comment.text %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(apartment_comment.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(apartment_comment.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/apartment_comments/<%= apartment_comment.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @apartment_comments, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>
