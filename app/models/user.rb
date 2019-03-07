@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :apartment_bookmarks,
+             :dependent => :destroy
+
   has_many   :pack_bookmarks,
              :dependent => :destroy
 
