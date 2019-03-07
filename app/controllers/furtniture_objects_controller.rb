@@ -6,6 +6,7 @@ class FurtnitureObjectsController < ApplicationController
   end
 
   def show
+    @furniture_object_picture = FurnitureObjectPicture.new
     @furtniture_object = FurtnitureObject.find(params.fetch("id_to_display"))
 
     render("furtniture_object_templates/show.html.erb")
@@ -30,6 +31,42 @@ class FurtnitureObjectsController < ApplicationController
       @furtniture_object.save
 
       redirect_back(:fallback_location => "/furtniture_objects", :notice => "Furtniture object created successfully.")
+    else
+      render("furtniture_object_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_furniture_pack
+    @furtniture_object = FurtnitureObject.new
+
+    @furtniture_object.price = params.fetch("price")
+    @furtniture_object.description = params.fetch("description")
+    @furtniture_object.furniture_pack_id = params.fetch("furniture_pack_id")
+    @furtniture_object.category_id = params.fetch("category_id")
+    @furtniture_object.name = params.fetch("name")
+
+    if @furtniture_object.valid?
+      @furtniture_object.save
+
+      redirect_to("/furniture_packs/#{@furtniture_object.furniture_pack_id}", notice: "FurtnitureObject created successfully.")
+    else
+      render("furtniture_object_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_furniture_category
+    @furtniture_object = FurtnitureObject.new
+
+    @furtniture_object.price = params.fetch("price")
+    @furtniture_object.description = params.fetch("description")
+    @furtniture_object.furniture_pack_id = params.fetch("furniture_pack_id")
+    @furtniture_object.category_id = params.fetch("category_id")
+    @furtniture_object.name = params.fetch("name")
+
+    if @furtniture_object.valid?
+      @furtniture_object.save
+
+      redirect_to("/furniture_categories/#{@furtniture_object.category_id}", notice: "FurtnitureObject created successfully.")
     else
       render("furtniture_object_templates/new_form_with_errors.html.erb")
     end

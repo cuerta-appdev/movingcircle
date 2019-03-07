@@ -33,6 +33,22 @@ class ApartmentBookmarksController < ApplicationController
     end
   end
 
+  def create_row_from_apartment
+    @apartment_bookmark = ApartmentBookmark.new
+
+    @apartment_bookmark.user_id = params.fetch("user_id")
+    @apartment_bookmark.apartment_id = params.fetch("apartment_id")
+    @apartment_bookmark.name = params.fetch("name")
+
+    if @apartment_bookmark.valid?
+      @apartment_bookmark.save
+
+      redirect_to("/apartments/#{@apartment_bookmark.apartment_id}", notice: "ApartmentBookmark created successfully.")
+    else
+      render("apartment_bookmark_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @apartment_bookmark = ApartmentBookmark.find(params.fetch("prefill_with_id"))
 

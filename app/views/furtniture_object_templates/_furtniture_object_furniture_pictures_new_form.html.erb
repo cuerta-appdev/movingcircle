@@ -1,0 +1,25 @@
+<!-- Form furniture_object_picture start -->
+<form action="/create_furniture_object_picture_from_furtniture_object" method="post">
+<!-- Form furniture_object_picture end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <!-- Input for picture start -->
+    <input type="text" id="picture" name="picture" class="form-control" value="<%= @furniture_object_picture.picture %>">
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <!-- Label and input for furniture_object_id start -->
+  <!-- Input for furniture_object_id start -->
+  <input type="hidden" name="furniture_object_id" value="<%= @furtniture_object.id %>">
+  <!-- Input for furniture_object_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create furniture object picture
+  </button>
+</form>

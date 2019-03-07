@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/furniture_category_pictures/new", { :controller => "furniture_category_pictures", :action => "new_form" })
   post("/create_furniture_category_picture", { :controller => "furniture_category_pictures", :action => "create_row" })
+  post("/create_furniture_category_picture_from_furniture_category", { :controller => "furniture_category_pictures", :action => "create_row_from_furniture_category" })
 
   # READ
   get("/furniture_category_pictures", { :controller => "furniture_category_pictures", :action => "index" })
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/furniture_categories/new", { :controller => "furniture_categories", :action => "new_form" })
   post("/create_furniture_category", { :controller => "furniture_categories", :action => "create_row" })
+  post("/create_furniture_category_from_furniture_pack", { :controller => "furniture_categories", :action => "create_row_from_furniture_pack" })
 
   # READ
   get("/furniture_categories", { :controller => "furniture_categories", :action => "index" })
@@ -47,6 +49,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/building_bookmarks/new", { :controller => "building_bookmarks", :action => "new_form" })
   post("/create_building_bookmark", { :controller => "building_bookmarks", :action => "create_row" })
+  post("/create_building_bookmark_from_building", { :controller => "building_bookmarks", :action => "create_row_from_building" })
 
   # READ
   get("/building_bookmarks", { :controller => "building_bookmarks", :action => "index" })
@@ -68,6 +71,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/building_amenities/new", { :controller => "building_amenities", :action => "new_form" })
   post("/create_building_amenity", { :controller => "building_amenities", :action => "create_row" })
+  post("/create_building_amenity_from_building", { :controller => "building_amenities", :action => "create_row_from_building" })
+  post("/create_building_amenity_from_amenity", { :controller => "building_amenities", :action => "create_row_from_amenity" })
 
   # READ
   get("/building_amenities", { :controller => "building_amenities", :action => "index" })
@@ -108,6 +113,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/amenity_pictures/new", { :controller => "amenity_pictures", :action => "new_form" })
   post("/create_amenity_picture", { :controller => "amenity_pictures", :action => "create_row" })
+  post("/create_amenity_picture_from_building_amenity", { :controller => "amenity_pictures", :action => "create_row_from_building_amenity" })
 
   # READ
   get("/amenity_pictures", { :controller => "amenity_pictures", :action => "index" })
@@ -147,6 +153,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/apartment_bookmarks/new", { :controller => "apartment_bookmarks", :action => "new_form" })
   post("/create_apartment_bookmark", { :controller => "apartment_bookmarks", :action => "create_row" })
+  post("/create_apartment_bookmark_from_apartment", { :controller => "apartment_bookmarks", :action => "create_row_from_apartment" })
 
   # READ
   get("/apartment_bookmarks", { :controller => "apartment_bookmarks", :action => "index" })
@@ -168,6 +175,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/pack_bookmarks/new", { :controller => "pack_bookmarks", :action => "new_form" })
   post("/create_pack_bookmark", { :controller => "pack_bookmarks", :action => "create_row" })
+  post("/create_pack_bookmark_from_furniture_pack", { :controller => "pack_bookmarks", :action => "create_row_from_furniture_pack" })
 
   # READ
   get("/pack_bookmarks", { :controller => "pack_bookmarks", :action => "index" })
@@ -209,6 +217,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/apartment_photos/new", { :controller => "apartment_photos", :action => "new_form" })
   post("/create_apartment_photo", { :controller => "apartment_photos", :action => "create_row" })
+  post("/create_apartment_photo_from_apartment", { :controller => "apartment_photos", :action => "create_row_from_apartment" })
 
   # READ
   get("/apartment_photos", { :controller => "apartment_photos", :action => "index" })
@@ -229,6 +238,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/furniture_object_pictures/new", { :controller => "furniture_object_pictures", :action => "new_form" })
   post("/create_furniture_object_picture", { :controller => "furniture_object_pictures", :action => "create_row" })
+  post("/create_furniture_object_picture_from_furtniture_object", { :controller => "furniture_object_pictures", :action => "create_row_from_furtniture_object" })
 
   # READ
   get("/furniture_object_pictures", { :controller => "furniture_object_pictures", :action => "index" })
@@ -249,6 +259,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/furtniture_objects/new", { :controller => "furtniture_objects", :action => "new_form" })
   post("/create_furtniture_object", { :controller => "furtniture_objects", :action => "create_row" })
+  post("/create_furtniture_object_from_furniture_category", { :controller => "furtniture_objects", :action => "create_row_from_furniture_category" })
+  post("/create_furtniture_object_from_furniture_pack", { :controller => "furtniture_objects", :action => "create_row_from_furniture_pack" })
 
   # READ
   get("/furtniture_objects", { :controller => "furtniture_objects", :action => "index" })
@@ -270,6 +282,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/apartments/new", { :controller => "apartments", :action => "new_form" })
   post("/create_apartment", { :controller => "apartments", :action => "create_row" })
+  post("/create_apartment_from_building", { :controller => "apartments", :action => "create_row_from_building" })
 
   # READ
   get("/apartments", { :controller => "apartments", :action => "index" })

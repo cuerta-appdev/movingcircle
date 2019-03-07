@@ -6,6 +6,9 @@ class FurniturePacksController < ApplicationController
   end
 
   def show
+    @furniture_category = FurnitureCategory.new
+    @pack_bookmark = PackBookmark.new
+    @furtniture_object = FurtnitureObject.new
     @furniture_pack = FurniturePack.find(params.fetch("id_to_display"))
 
     render("furniture_pack_templates/show.html.erb")

@@ -1,0 +1,37 @@
+<!-- Form pack_bookmark start -->
+<form action="/create_pack_bookmark_from_furniture_pack" method="post">
+<!-- Form pack_bookmark end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @pack_bookmark.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for pack_id start -->
+  <!-- Input for pack_id start -->
+  <input type="hidden" name="pack_id" value="<%= @furniture_pack.id %>">
+  <!-- Input for pack_id end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @pack_bookmark.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pack bookmark
+  </button>
+</form>

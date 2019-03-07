@@ -32,6 +32,21 @@ class FurnitureObjectPicturesController < ApplicationController
     end
   end
 
+  def create_row_from_furtniture_object
+    @furniture_object_picture = FurnitureObjectPicture.new
+
+    @furniture_object_picture.picture = params.fetch("picture")
+    @furniture_object_picture.furniture_object_id = params.fetch("furniture_object_id")
+
+    if @furniture_object_picture.valid?
+      @furniture_object_picture.save
+
+      redirect_to("/furtniture_objects/#{@furniture_object_picture.furniture_object_id}", notice: "FurnitureObjectPicture created successfully.")
+    else
+      render("furniture_object_picture_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @furniture_object_picture = FurnitureObjectPicture.find(params.fetch("prefill_with_id"))
 

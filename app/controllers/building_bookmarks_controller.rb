@@ -33,6 +33,22 @@ class BuildingBookmarksController < ApplicationController
     end
   end
 
+  def create_row_from_building
+    @building_bookmark = BuildingBookmark.new
+
+    @building_bookmark.building_id = params.fetch("building_id")
+    @building_bookmark.user_id = params.fetch("user_id")
+    @building_bookmark.name = params.fetch("name")
+
+    if @building_bookmark.valid?
+      @building_bookmark.save
+
+      redirect_to("/buildings/#{@building_bookmark.building_id}", notice: "BuildingBookmark created successfully.")
+    else
+      render("building_bookmark_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @building_bookmark = BuildingBookmark.find(params.fetch("prefill_with_id"))
 

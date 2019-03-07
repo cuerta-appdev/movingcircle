@@ -6,6 +6,8 @@ class ApartmentsController < ApplicationController
   end
 
   def show
+    @apartment_bookmark = ApartmentBookmark.new
+    @apartment_photo = ApartmentPhoto.new
     @apartment = Apartment.find(params.fetch("id_to_display"))
 
     render("apartment_templates/show.html.erb")
@@ -34,6 +36,28 @@ class ApartmentsController < ApplicationController
       @apartment.save
 
       redirect_back(:fallback_location => "/apartments", :notice => "Apartment created successfully.")
+    else
+      render("apartment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_building
+    @apartment = Apartment.new
+
+    @apartment.user_id = params.fetch("user_id")
+    @apartment.description = params.fetch("description")
+    @apartment.floor_plan = params.fetch("floor_plan")
+    @apartment.building_id = params.fetch("building_id")
+    @apartment.bedrooms = params.fetch("bedrooms")
+    @apartment.bathrooms = params.fetch("bathrooms")
+    @apartment.sq_footage = params.fetch("sq_footage")
+    @apartment.orientation = params.fetch("orientation")
+    @apartment.floor = params.fetch("floor")
+
+    if @apartment.valid?
+      @apartment.save
+
+      redirect_to("/buildings/#{@apartment.building_id}", notice: "Apartment created successfully.")
     else
       render("apartment_templates/new_form_with_errors.html.erb")
     end

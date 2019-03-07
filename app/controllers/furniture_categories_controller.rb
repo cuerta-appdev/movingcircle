@@ -6,6 +6,8 @@ class FurnitureCategoriesController < ApplicationController
   end
 
   def show
+    @furtniture_object = FurtnitureObject.new
+    @furniture_category_picture = FurnitureCategoryPicture.new
     @furniture_category = FurnitureCategory.find(params.fetch("id_to_display"))
 
     render("furniture_category_templates/show.html.erb")
@@ -30,6 +32,24 @@ class FurnitureCategoriesController < ApplicationController
       @furniture_category.save
 
       redirect_back(:fallback_location => "/furniture_categories", :notice => "Furniture category created successfully.")
+    else
+      render("furniture_category_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_furniture_pack
+    @furniture_category = FurnitureCategory.new
+
+    @furniture_category.items = params.fetch("items")
+    @furniture_category.name = params.fetch("name")
+    @furniture_category.furniture_pack_id = params.fetch("furniture_pack_id")
+    @furniture_category.number_of_items = params.fetch("number_of_items")
+    @furniture_category.price = params.fetch("price")
+
+    if @furniture_category.valid?
+      @furniture_category.save
+
+      redirect_to("/furniture_packs/#{@furniture_category.furniture_pack_id}", notice: "FurnitureCategory created successfully.")
     else
       render("furniture_category_templates/new_form_with_errors.html.erb")
     end

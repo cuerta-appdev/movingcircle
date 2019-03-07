@@ -33,6 +33,22 @@ class AmenityPicturesController < ApplicationController
     end
   end
 
+  def create_row_from_building_amenity
+    @amenity_picture = AmenityPicture.new
+
+    @amenity_picture.picture = params.fetch("picture")
+    @amenity_picture.description = params.fetch("description")
+    @amenity_picture.building_amenity_id = params.fetch("building_amenity_id")
+
+    if @amenity_picture.valid?
+      @amenity_picture.save
+
+      redirect_to("/building_amenities/#{@amenity_picture.building_amenity_id}", notice: "AmenityPicture created successfully.")
+    else
+      render("amenity_picture_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @amenity_picture = AmenityPicture.find(params.fetch("prefill_with_id"))
 

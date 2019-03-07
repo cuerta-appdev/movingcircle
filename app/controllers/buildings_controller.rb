@@ -6,6 +6,9 @@ class BuildingsController < ApplicationController
   end
 
   def show
+    @building_bookmark = BuildingBookmark.new
+    @apartment = Apartment.new
+    @building_amenity = BuildingAmenity.new
     @building = Building.find(params.fetch("id_to_display"))
 
     render("building_templates/show.html.erb")

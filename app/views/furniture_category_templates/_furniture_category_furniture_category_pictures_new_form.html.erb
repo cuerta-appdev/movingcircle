@@ -1,0 +1,25 @@
+<!-- Form furniture_category_picture start -->
+<form action="/create_furniture_category_picture_from_furniture_category" method="post">
+<!-- Form furniture_category_picture end -->
+
+  <!-- Label and input for category_id start -->
+  <!-- Input for category_id start -->
+  <input type="hidden" name="category_id" value="<%= @furniture_category.id %>">
+  <!-- Input for category_id end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <!-- Input for picture start -->
+    <input type="text" id="picture" name="picture" class="form-control" value="<%= @furniture_category_picture.picture %>">
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create furniture category picture
+  </button>
+</form>

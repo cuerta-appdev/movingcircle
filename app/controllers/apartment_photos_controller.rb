@@ -33,6 +33,22 @@ class ApartmentPhotosController < ApplicationController
     end
   end
 
+  def create_row_from_apartment
+    @apartment_photo = ApartmentPhoto.new
+
+    @apartment_photo.description = params.fetch("description")
+    @apartment_photo.apartment_id = params.fetch("apartment_id")
+    @apartment_photo.photo = params.fetch("photo")
+
+    if @apartment_photo.valid?
+      @apartment_photo.save
+
+      redirect_to("/apartments/#{@apartment_photo.apartment_id}", notice: "ApartmentPhoto created successfully.")
+    else
+      render("apartment_photo_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @apartment_photo = ApartmentPhoto.find(params.fetch("prefill_with_id"))
 

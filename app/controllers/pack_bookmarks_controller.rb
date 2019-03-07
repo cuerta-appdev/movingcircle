@@ -33,6 +33,22 @@ class PackBookmarksController < ApplicationController
     end
   end
 
+  def create_row_from_furniture_pack
+    @pack_bookmark = PackBookmark.new
+
+    @pack_bookmark.user_id = params.fetch("user_id")
+    @pack_bookmark.pack_id = params.fetch("pack_id")
+    @pack_bookmark.name = params.fetch("name")
+
+    if @pack_bookmark.valid?
+      @pack_bookmark.save
+
+      redirect_to("/furniture_packs/#{@pack_bookmark.pack_id}", notice: "PackBookmark created successfully.")
+    else
+      render("pack_bookmark_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @pack_bookmark = PackBookmark.find(params.fetch("prefill_with_id"))
 

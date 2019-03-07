@@ -6,6 +6,7 @@ class AmenitiesController < ApplicationController
   end
 
   def show
+    @building_amenity = BuildingAmenity.new
     @amenity = Amenity.find(params.fetch("id_to_display"))
 
     render("amenity_templates/show.html.erb")
