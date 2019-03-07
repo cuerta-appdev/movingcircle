@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Amenity picture #<%= @amenity_picture.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/amenity_pictures" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link amenity_picture start -->
+      <div class="col">
+        <a href="/amenity_pictures/<%= @amenity_picture.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit amenity picture
+        </a>
+      </div>
+      <!-- Edit link amenity_picture end -->
+
+      <!-- Delete link amenity_picture start -->
+      <div class="col">
+        <a href="/delete_amenity_picture/<%= @amenity_picture.id %>" class="btn btn-block btn-outline-secondary">
+          Delete amenity picture
+        </a>
+      </div>
+      <!-- Delete link amenity_picture end -->
+    </div>
+
+    <dl>
+      <dt>
+        Picture
+      </dt>
+      <!-- Display picture start -->
+      <dd>
+        <%= @amenity_picture.picture %>
+      </dd>
+      <!-- Display picture end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @amenity_picture.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Building amenity
+      </dt>
+      <!-- Display building_amenity_id start -->
+      <dd>
+        <%= @amenity_picture.building_amenity_id %>
+      </dd>
+      <!-- Display building_amenity_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@amenity_picture.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@amenity_picture.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

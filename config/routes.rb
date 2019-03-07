@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Amenity picture resource:
+
+  # CREATE
+  get("/amenity_pictures/new", { :controller => "amenity_pictures", :action => "new_form" })
+  post("/create_amenity_picture", { :controller => "amenity_pictures", :action => "create_row" })
+
+  # READ
+  get("/amenity_pictures", { :controller => "amenity_pictures", :action => "index" })
+  get("/amenity_pictures/:id_to_display", { :controller => "amenity_pictures", :action => "show" })
+
+  # UPDATE
+  get("/amenity_pictures/:prefill_with_id/edit", { :controller => "amenity_pictures", :action => "edit_form" })
+  post("/update_amenity_picture/:id_to_modify", { :controller => "amenity_pictures", :action => "update_row" })
+
+  # DELETE
+  get("/delete_amenity_picture/:id_to_remove", { :controller => "amenity_pictures", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Amenity resource:
 
   # CREATE
