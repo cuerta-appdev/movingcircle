@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for furniture_pack_id start -->
-    <input type="text" id="furniture_pack_id" name="furniture_pack_id" class="form-control" value="<%= @furniture_category.furniture_pack_id %>">
+    <%= select_tag(:furniture_pack_id, options_from_collection_for_select(FurniturePack.all, :id, :description, @furniture_category.furniture_pack_id), :class => "form-control") %>
     <!-- Input for furniture_pack_id end -->
   </div>
   <!-- Label and input for furniture_pack_id end -->
