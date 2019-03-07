@@ -4,6 +4,8 @@ RSpec.describe Apartment, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:building) }
+
     it { should have_many(:apartment_bookmarks) }
 
     it { should have_many(:apartment_photos) }
