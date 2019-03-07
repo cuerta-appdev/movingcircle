@@ -1,6 +1,9 @@
 class FurtnitureObject < ApplicationRecord
   # Direct associations
 
+  belongs_to :category,
+             :class_name => "FurnitureCategory"
+
   belongs_to :furniture_pack
 
   has_many   :furniture_pictures,
