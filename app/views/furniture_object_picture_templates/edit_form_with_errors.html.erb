@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @furniture_object_picture.errors.any? %>
+  <% @furniture_object_picture.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit furniture object picture #<%= @furniture_object_picture.id %>
+</h1>
+
+<hr>
+
+<!-- Form furniture_object_picture start -->
+<form action="/update_furniture_object_picture/<%= @furniture_object_picture.id %>" method="post">
+<!-- Form furniture_object_picture end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <!-- Input for picture start -->
+    <input type="text" id="picture" name="picture" class="form-control" value="<%= @furniture_object_picture.picture %>">
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <!-- Label and input for furniture_object_id start -->
+  <div class="form-group">
+    <label for="furniture_object_id">
+      Furniture object
+    </label>
+
+    <!-- Input for furniture_object_id start -->
+    <input type="text" id="furniture_object_id" name="furniture_object_id" class="form-control" value="<%= @furniture_object_picture.furniture_object_id %>">
+    <!-- Input for furniture_object_id end -->
+  </div>
+  <!-- Label and input for furniture_object_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update furniture object picture
+  </button>
+</form>
+
+<hr>
+
+<a href="/furniture_object_pictures">
+  Go back
+</a>

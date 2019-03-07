@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Furniture object picture resource:
+
+  # CREATE
+  get("/furniture_object_pictures/new", { :controller => "furniture_object_pictures", :action => "new_form" })
+  post("/create_furniture_object_picture", { :controller => "furniture_object_pictures", :action => "create_row" })
+
+  # READ
+  get("/furniture_object_pictures", { :controller => "furniture_object_pictures", :action => "index" })
+  get("/furniture_object_pictures/:id_to_display", { :controller => "furniture_object_pictures", :action => "show" })
+
+  # UPDATE
+  get("/furniture_object_pictures/:prefill_with_id/edit", { :controller => "furniture_object_pictures", :action => "edit_form" })
+  post("/update_furniture_object_picture/:id_to_modify", { :controller => "furniture_object_pictures", :action => "update_row" })
+
+  # DELETE
+  get("/delete_furniture_object_picture/:id_to_remove", { :controller => "furniture_object_pictures", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Furtniture object resource:
 
   # CREATE
