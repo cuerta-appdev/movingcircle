@@ -1,4 +1,6 @@
 ActiveAdmin.register Apartment do
+
+ permit_params :user_id, :description, :floor_plan, :building_id, :bedrooms, :bathrooms, :sq_footage, :orientation, :floor
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
