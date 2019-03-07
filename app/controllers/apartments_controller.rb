@@ -1,6 +1,7 @@
 class ApartmentsController < ApplicationController
   def index
-    @apartments = Apartment.page(params[:page]).per(10)
+    @q = Apartment.ransack(params[:q])
+    @apartments = @q.result(:distinct => true).includes(:user, :apartment_photos, :apartment_bookmarks, :building).page(params[:page]).per(10)
 
     render("apartment_templates/index.html.erb")
   end

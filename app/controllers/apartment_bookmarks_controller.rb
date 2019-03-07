@@ -1,6 +1,7 @@
 class ApartmentBookmarksController < ApplicationController
   def index
-    @apartment_bookmarks = ApartmentBookmark.page(params[:page]).per(10)
+    @q = ApartmentBookmark.ransack(params[:q])
+    @apartment_bookmarks = @q.result(:distinct => true).includes(:user, :apartment).page(params[:page]).per(10)
 
     render("apartment_bookmark_templates/index.html.erb")
   end

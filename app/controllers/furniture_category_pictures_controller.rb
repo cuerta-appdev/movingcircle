@@ -1,6 +1,7 @@
 class FurnitureCategoryPicturesController < ApplicationController
   def index
-    @furniture_category_pictures = FurnitureCategoryPicture.page(params[:page]).per(10)
+    @q = FurnitureCategoryPicture.ransack(params[:q])
+    @furniture_category_pictures = @q.result(:distinct => true).includes(:category).page(params[:page]).per(10)
 
     render("furniture_category_picture_templates/index.html.erb")
   end

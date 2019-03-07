@@ -1,6 +1,7 @@
 class AmenitiesController < ApplicationController
   def index
-    @amenities = Amenity.page(params[:page]).per(10)
+    @q = Amenity.ransack(params[:q])
+    @amenities = @q.result(:distinct => true).includes(:building_amenities).page(params[:page]).per(10)
 
     render("amenity_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class FurnitureObjectPicturesController < ApplicationController
   def index
-    @furniture_object_pictures = FurnitureObjectPicture.page(params[:page]).per(10)
+    @q = FurnitureObjectPicture.ransack(params[:q])
+    @furniture_object_pictures = @q.result(:distinct => true).includes(:furniture_object).page(params[:page]).per(10)
 
     render("furniture_object_picture_templates/index.html.erb")
   end

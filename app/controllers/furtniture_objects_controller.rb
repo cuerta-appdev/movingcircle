@@ -1,6 +1,7 @@
 class FurtnitureObjectsController < ApplicationController
   def index
-    @furtniture_objects = FurtnitureObject.page(params[:page]).per(10)
+    @q = FurtnitureObject.ransack(params[:q])
+    @furtniture_objects = @q.result(:distinct => true).includes(:furniture_pictures, :furniture_pack, :category).page(params[:page]).per(10)
 
     render("furtniture_object_templates/index.html.erb")
   end

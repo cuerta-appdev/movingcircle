@@ -10,7 +10,8 @@ class FurniturePacksController < ApplicationController
   end
 
   def index
-    @furniture_packs = FurniturePack.page(params[:page]).per(10)
+    @q = FurniturePack.ransack(params[:q])
+    @furniture_packs = @q.result(:distinct => true).includes(:user, :furtniture_objects, :pack_bookmarks, :furniture_categories).page(params[:page]).per(10)
 
     render("furniture_pack_templates/index.html.erb")
   end

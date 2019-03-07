@@ -1,6 +1,7 @@
 class PackBookmarksController < ApplicationController
   def index
-    @pack_bookmarks = PackBookmark.page(params[:page]).per(10)
+    @q = PackBookmark.ransack(params[:q])
+    @pack_bookmarks = @q.result(:distinct => true).includes(:user, :pack).page(params[:page]).per(10)
 
     render("pack_bookmark_templates/index.html.erb")
   end

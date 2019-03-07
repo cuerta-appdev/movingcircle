@@ -1,6 +1,7 @@
 class BuildingBookmarksController < ApplicationController
   def index
-    @building_bookmarks = BuildingBookmark.page(params[:page]).per(10)
+    @q = BuildingBookmark.ransack(params[:q])
+    @building_bookmarks = @q.result(:distinct => true).includes(:user, :building).page(params[:page]).per(10)
 
     render("building_bookmark_templates/index.html.erb")
   end
