@@ -14,7 +14,7 @@
 <hr>
 
 <!-- Form apartment_photo start -->
-<form action="/update_apartment_photo/<%= @apartment_photo.id %>" method="post">
+<form action="/update_apartment_photo/<%= @apartment_photo.id %>" method="post" enctype="multipart/form-data">
 <!-- Form apartment_photo end -->
 
   <!-- Label and input for description start -->
@@ -48,7 +48,8 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @apartment_photo.photo %>">
+    <%= cl_image_tag(@apartment_photo.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

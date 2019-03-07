@@ -14,7 +14,7 @@
 <hr>
 
 <!-- Form furniture_object_picture start -->
-<form action="/update_furniture_object_picture/<%= @furniture_object_picture.id %>" method="post">
+<form action="/update_furniture_object_picture/<%= @furniture_object_picture.id %>" method="post" enctype="multipart/form-data">
 <!-- Form furniture_object_picture end -->
 
   <!-- Label and input for picture start -->
@@ -24,7 +24,8 @@
     </label>
 
     <!-- Input for picture start -->
-    <input type="text" id="picture" name="picture" class="form-control" value="<%= @furniture_object_picture.picture %>">
+    <%= cl_image_tag(@furniture_object_picture.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="picture" name="picture" class="form-control">
     <!-- Input for picture end -->
   </div>
   <!-- Label and input for picture end -->

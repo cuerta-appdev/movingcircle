@@ -20,7 +20,7 @@ class FurnitureObjectPicturesController < ApplicationController
   def create_row
     @furniture_object_picture = FurnitureObjectPicture.new
 
-    @furniture_object_picture.picture = params.fetch("picture")
+    @furniture_object_picture.picture = params.fetch("picture") if params.key?("picture")
     @furniture_object_picture.furniture_object_id = params.fetch("furniture_object_id")
 
     if @furniture_object_picture.valid?
@@ -35,7 +35,7 @@ class FurnitureObjectPicturesController < ApplicationController
   def create_row_from_furtniture_object
     @furniture_object_picture = FurnitureObjectPicture.new
 
-    @furniture_object_picture.picture = params.fetch("picture")
+    @furniture_object_picture.picture = params.fetch("picture") if params.key?("picture")
     @furniture_object_picture.furniture_object_id = params.fetch("furniture_object_id")
 
     if @furniture_object_picture.valid?
@@ -56,7 +56,7 @@ class FurnitureObjectPicturesController < ApplicationController
   def update_row
     @furniture_object_picture = FurnitureObjectPicture.find(params.fetch("id_to_modify"))
 
-    @furniture_object_picture.picture = params.fetch("picture")
+    @furniture_object_picture.picture = params.fetch("picture") if params.key?("picture")
     @furniture_object_picture.furniture_object_id = params.fetch("furniture_object_id")
 
     if @furniture_object_picture.valid?

@@ -22,7 +22,7 @@ class ApartmentPhotosController < ApplicationController
 
     @apartment_photo.description = params.fetch("description")
     @apartment_photo.apartment_id = params.fetch("apartment_id")
-    @apartment_photo.photo = params.fetch("photo")
+    @apartment_photo.photo = params.fetch("photo") if params.key?("photo")
 
     if @apartment_photo.valid?
       @apartment_photo.save
@@ -38,7 +38,7 @@ class ApartmentPhotosController < ApplicationController
 
     @apartment_photo.description = params.fetch("description")
     @apartment_photo.apartment_id = params.fetch("apartment_id")
-    @apartment_photo.photo = params.fetch("photo")
+    @apartment_photo.photo = params.fetch("photo") if params.key?("photo")
 
     if @apartment_photo.valid?
       @apartment_photo.save
@@ -60,7 +60,7 @@ class ApartmentPhotosController < ApplicationController
 
     @apartment_photo.description = params.fetch("description")
     @apartment_photo.apartment_id = params.fetch("apartment_id")
-    @apartment_photo.photo = params.fetch("photo")
+    @apartment_photo.photo = params.fetch("photo") if params.key?("photo")
 
     if @apartment_photo.valid?
       @apartment_photo.save

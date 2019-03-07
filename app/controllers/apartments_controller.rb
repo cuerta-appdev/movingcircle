@@ -24,7 +24,7 @@ class ApartmentsController < ApplicationController
 
     @apartment.user_id = params.fetch("user_id")
     @apartment.description = params.fetch("description")
-    @apartment.floor_plan = params.fetch("floor_plan")
+    @apartment.floor_plan = params.fetch("floor_plan") if params.key?("floor_plan")
     @apartment.building_id = params.fetch("building_id")
     @apartment.bedrooms = params.fetch("bedrooms")
     @apartment.bathrooms = params.fetch("bathrooms")
@@ -46,7 +46,7 @@ class ApartmentsController < ApplicationController
 
     @apartment.user_id = params.fetch("user_id")
     @apartment.description = params.fetch("description")
-    @apartment.floor_plan = params.fetch("floor_plan")
+    @apartment.floor_plan = params.fetch("floor_plan") if params.key?("floor_plan")
     @apartment.building_id = params.fetch("building_id")
     @apartment.bedrooms = params.fetch("bedrooms")
     @apartment.bathrooms = params.fetch("bathrooms")
@@ -74,7 +74,7 @@ class ApartmentsController < ApplicationController
 
     @apartment.user_id = params.fetch("user_id")
     @apartment.description = params.fetch("description")
-    @apartment.floor_plan = params.fetch("floor_plan")
+    @apartment.floor_plan = params.fetch("floor_plan") if params.key?("floor_plan")
     @apartment.building_id = params.fetch("building_id")
     @apartment.bedrooms = params.fetch("bedrooms")
     @apartment.bathrooms = params.fetch("bathrooms")

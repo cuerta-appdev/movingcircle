@@ -1,5 +1,5 @@
 <!-- Form apartment start -->
-<form action="/create_apartment_from_building" method="post">
+<form action="/create_apartment" method="post" enctype="multipart/form-data">
 <!-- Form apartment end -->
 
   <!-- Label and input for user_id start -->
@@ -33,7 +33,7 @@
     </label>
 
     <!-- Input for floor_plan start -->
-    <input type="text" id="floor_plan" name="floor_plan" class="form-control" value="<%= @apartment.floor_plan %>">
+    <input type="file" id="floor_plan" name="floor_plan" class="form-control">
     <!-- Input for floor_plan end -->
   </div>
   <!-- Label and input for floor_plan end -->

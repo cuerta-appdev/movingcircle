@@ -1,4 +1,6 @@
 class FurnitureObjectPicture < ApplicationRecord
+  mount_uploader :picture, PictureUploader
+
   # Direct associations
 
   belongs_to :furniture_object,

@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form furniture_category_picture start -->
-<form action="/create_furniture_category_picture" method="post">
+<form action="/create_furniture_category_picture" method="post" enctype="multipart/form-data">
 <!-- Form furniture_category_picture end -->
 
   <!-- Label and input for category_id start -->
@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for picture start -->
-    <input type="text" id="picture" name="picture" class="form-control" value="<%= @furniture_category_picture.picture %>">
+    <input type="file" id="picture" name="picture" class="form-control">
     <!-- Input for picture end -->
   </div>
   <!-- Label and input for picture end -->

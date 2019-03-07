@@ -6,7 +6,7 @@
 <hr>
 
 <!-- Form apartment_photo start -->
-<form action="/create_apartment_photo" method="post">
+<form action="/create_apartment_photo" method="post" enctype="multipart/form-data">
 <!-- Form apartment_photo end -->
 
   <!-- Label and input for description start -->
@@ -40,7 +40,7 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control">
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

@@ -21,7 +21,7 @@ class FurnitureCategoryPicturesController < ApplicationController
     @furniture_category_picture = FurnitureCategoryPicture.new
 
     @furniture_category_picture.category_id = params.fetch("category_id")
-    @furniture_category_picture.picture = params.fetch("picture")
+    @furniture_category_picture.picture = params.fetch("picture") if params.key?("picture")
 
     if @furniture_category_picture.valid?
       @furniture_category_picture.save
@@ -36,7 +36,7 @@ class FurnitureCategoryPicturesController < ApplicationController
     @furniture_category_picture = FurnitureCategoryPicture.new
 
     @furniture_category_picture.category_id = params.fetch("category_id")
-    @furniture_category_picture.picture = params.fetch("picture")
+    @furniture_category_picture.picture = params.fetch("picture") if params.key?("picture")
 
     if @furniture_category_picture.valid?
       @furniture_category_picture.save
@@ -57,7 +57,7 @@ class FurnitureCategoryPicturesController < ApplicationController
     @furniture_category_picture = FurnitureCategoryPicture.find(params.fetch("id_to_modify"))
 
     @furniture_category_picture.category_id = params.fetch("category_id")
-    @furniture_category_picture.picture = params.fetch("picture")
+    @furniture_category_picture.picture = params.fetch("picture") if params.key?("picture")
 
     if @furniture_category_picture.valid?
       @furniture_category_picture.save

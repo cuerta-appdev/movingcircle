@@ -6,7 +6,7 @@
 <hr>
 
 <!-- Form amenity_picture start -->
-<form action="/create_amenity_picture" method="post">
+<form action="/create_amenity_picture" method="post" enctype="multipart/form-data">
 <!-- Form amenity_picture end -->
 
   <!-- Label and input for picture start -->
@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for picture start -->
-    <input type="text" id="picture" name="picture" class="form-control">
+    <input type="file" id="picture" name="picture" class="form-control">
     <!-- Input for picture end -->
   </div>
   <!-- Label and input for picture end -->

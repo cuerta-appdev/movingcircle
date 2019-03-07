@@ -20,7 +20,7 @@ class AmenityPicturesController < ApplicationController
   def create_row
     @amenity_picture = AmenityPicture.new
 
-    @amenity_picture.picture = params.fetch("picture")
+    @amenity_picture.picture = params.fetch("picture") if params.key?("picture")
     @amenity_picture.description = params.fetch("description")
     @amenity_picture.building_amenity_id = params.fetch("building_amenity_id")
 
@@ -36,7 +36,7 @@ class AmenityPicturesController < ApplicationController
   def create_row_from_building_amenity
     @amenity_picture = AmenityPicture.new
 
-    @amenity_picture.picture = params.fetch("picture")
+    @amenity_picture.picture = params.fetch("picture") if params.key?("picture")
     @amenity_picture.description = params.fetch("description")
     @amenity_picture.building_amenity_id = params.fetch("building_amenity_id")
 
@@ -58,7 +58,7 @@ class AmenityPicturesController < ApplicationController
   def update_row
     @amenity_picture = AmenityPicture.find(params.fetch("id_to_modify"))
 
-    @amenity_picture.picture = params.fetch("picture")
+    @amenity_picture.picture = params.fetch("picture") if params.key?("picture")
     @amenity_picture.description = params.fetch("description")
     @amenity_picture.building_amenity_id = params.fetch("building_amenity_id")
 

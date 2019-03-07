@@ -1,5 +1,5 @@
 <!-- Form amenity_picture start -->
-<form action="/create_amenity_picture_from_building_amenity" method="post">
+<form action="/create_amenity_picture" method="post" enctype="multipart/form-data">
 <!-- Form amenity_picture end -->
 
   <!-- Label and input for picture start -->
@@ -9,7 +9,7 @@
     </label>
 
     <!-- Input for picture start -->
-    <input type="text" id="picture" name="picture" class="form-control" value="<%= @amenity_picture.picture %>">
+    <input type="file" id="picture" name="picture" class="form-control">
     <!-- Input for picture end -->
   </div>
   <!-- Label and input for picture end -->

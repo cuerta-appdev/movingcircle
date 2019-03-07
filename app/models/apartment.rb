@@ -1,4 +1,6 @@
 class Apartment < ApplicationRecord
+  mount_uploader :floor_plan, FloorPlanUploader
+
   # Direct associations
 
   belongs_to :building
