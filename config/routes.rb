@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Amenity resource:
+
+  # CREATE
+  get("/amenities/new", { :controller => "amenities", :action => "new_form" })
+  post("/create_amenity", { :controller => "amenities", :action => "create_row" })
+
+  # READ
+  get("/amenities", { :controller => "amenities", :action => "index" })
+  get("/amenities/:id_to_display", { :controller => "amenities", :action => "show" })
+
+  # UPDATE
+  get("/amenities/:prefill_with_id/edit", { :controller => "amenities", :action => "edit_form" })
+  post("/update_amenity/:id_to_modify", { :controller => "amenities", :action => "update_row" })
+
+  # DELETE
+  get("/delete_amenity/:id_to_remove", { :controller => "amenities", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Apartment bookmark resource:
 
   # CREATE

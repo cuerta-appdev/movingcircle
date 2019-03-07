@@ -1,0 +1,44 @@
+<h1>
+  Edit amenity #<%= @amenity.id %>
+</h1>
+
+<hr>
+
+<!-- Form amenity start -->
+<form action="/update_amenity/<%= @amenity.id %>" method="post">
+<!-- Form amenity end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @amenity.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for category start -->
+  <div class="form-group">
+    <label for="category">
+      Category
+    </label>
+
+    <!-- Input for category start -->
+    <input type="text" id="category" name="category" class="form-control" value="<%= @amenity.category %>">
+    <!-- Input for category end -->
+  </div>
+  <!-- Label and input for category end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update amenity
+  </button>
+</form>
+
+<hr>
+
+<a href="/amenities">
+  Go back
+</a>
