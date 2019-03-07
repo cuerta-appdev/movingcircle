@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for amenity_id start -->
-    <input type="text" id="amenity_id" name="amenity_id" class="form-control">
+    <%= select_tag(:amenity_id, options_from_collection_for_select(Amenity.all, :id, :name, @building_amenity.amenity_id), :class => "form-control") %>
     <!-- Input for amenity_id end -->
   </div>
   <!-- Label and input for amenity_id end -->
