@@ -1,6 +1,6 @@
 class ApartmentBookmarksController < ApplicationController
   def index
-    @apartment_bookmarks = ApartmentBookmark.all
+    @apartment_bookmarks = ApartmentBookmark.page(params[:page]).per(10)
 
     render("apartment_bookmark_templates/index.html.erb")
   end

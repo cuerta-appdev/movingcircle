@@ -1,6 +1,6 @@
 class PackBookmarksController < ApplicationController
   def index
-    @pack_bookmarks = PackBookmark.all
+    @pack_bookmarks = PackBookmark.page(params[:page]).per(10)
 
     render("pack_bookmark_templates/index.html.erb")
   end

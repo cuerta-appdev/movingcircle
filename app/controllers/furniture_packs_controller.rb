@@ -10,7 +10,7 @@ class FurniturePacksController < ApplicationController
   end
 
   def index
-    @furniture_packs = FurniturePack.all
+    @furniture_packs = FurniturePack.page(params[:page]).per(10)
 
     render("furniture_pack_templates/index.html.erb")
   end

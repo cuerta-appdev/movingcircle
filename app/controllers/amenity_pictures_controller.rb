@@ -1,6 +1,6 @@
 class AmenityPicturesController < ApplicationController
   def index
-    @amenity_pictures = AmenityPicture.all
+    @amenity_pictures = AmenityPicture.page(params[:page]).per(10)
 
     render("amenity_picture_templates/index.html.erb")
   end

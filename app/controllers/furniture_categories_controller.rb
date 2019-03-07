@@ -1,6 +1,6 @@
 class FurnitureCategoriesController < ApplicationController
   def index
-    @furniture_categories = FurnitureCategory.all
+    @furniture_categories = FurnitureCategory.page(params[:page]).per(10)
 
     render("furniture_category_templates/index.html.erb")
   end
