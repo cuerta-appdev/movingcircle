@@ -4,6 +4,8 @@ RSpec.describe Building, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:building_amenities) }
+
     end
 
     describe "InDirect Associations" do
