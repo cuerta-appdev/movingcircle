@@ -1,0 +1,74 @@
+<form action="/create_furniture_pack_from_apartment" method="post">
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control" value="<%= @furniture_pack.description %>">
+  </div>
+
+  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <input type="text" id="price" name="price" class="form-control" value="<%= @furniture_pack.price %>">
+  </div>
+
+  <div class="form-group">
+    <label for="number_of_items">
+      Number of items
+    </label>
+
+    <input type="text" id="number_of_items" name="number_of_items" class="form-control" value="<%= @furniture_pack.number_of_items %>">
+  </div>
+
+  <div class="form-group">
+    <label for="storage_conditions">
+      Storage conditions
+    </label>
+
+    <input type="text" id="storage_conditions" name="storage_conditions" class="form-control" value="<%= @furniture_pack.storage_conditions %>">
+  </div>
+
+  <div class="form-group">
+    <label for="apartment_sq_footage">
+      Apartment sq footage
+    </label>
+
+    <input type="text" id="apartment_sq_footage" name="apartment_sq_footage" class="form-control" value="<%= @furniture_pack.apartment_sq_footage %>">
+  </div>
+
+  <div class="form-group">
+    <label for="apartment_number_of_bedrooms">
+      Apartment number of bedrooms
+    </label>
+
+    <input type="text" id="apartment_number_of_bedrooms" name="apartment_number_of_bedrooms" class="form-control" value="<%= @furniture_pack.apartment_number_of_bedrooms %>">
+  </div>
+
+  <div class="form-group">
+    <label for="apartment_number_of_bathrooms">
+      Apartment number of bathrooms
+    </label>
+
+    <input type="text" id="apartment_number_of_bathrooms" name="apartment_number_of_bathrooms" class="form-control" value="<%= @furniture_pack.apartment_number_of_bathrooms %>">
+  </div>
+
+  <div class="form-group">
+    <label for="apartment_building_name">
+      Apartment building name
+    </label>
+
+    <input type="text" id="apartment_building_name" name="apartment_building_name" class="form-control" value="<%= @furniture_pack.apartment_building_name %>">
+  </div>
+
+  <input type="hidden" name="apartment_id" value="<%= @apartment.id %>">
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create furniture pack
+  </button>
+</form>

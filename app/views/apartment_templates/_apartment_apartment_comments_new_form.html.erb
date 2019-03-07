@@ -1,0 +1,24 @@
+<form action="/create_apartment_comment_from_apartment" method="post">
+
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @apartment_comment.user_id), :class => "form-control") %>
+  </div>
+
+  <input type="hidden" name="apartment_id" value="<%= @apartment.id %>">
+
+  <div class="form-group">
+    <label for="text">
+      Text
+    </label>
+
+    <textarea id="text" name="text" class="form-control" rows="3"><%= @apartment_comment.text %></textarea>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create apartment comment
+  </button>
+</form>

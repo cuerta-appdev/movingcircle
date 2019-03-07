@@ -1,6 +1,9 @@
 class FurniturePack < ApplicationRecord
   # Direct associations
 
+  has_many   :pack_comments,
+             :dependent => :destroy
+
   has_many   :furniture_categories,
              :dependent => :destroy
 
@@ -10,6 +13,8 @@ class FurniturePack < ApplicationRecord
 
   has_many   :furtniture_objects,
              :dependent => :destroy
+
+  belongs_to :apartment
 
   belongs_to :user
 

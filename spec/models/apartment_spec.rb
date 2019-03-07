@@ -6,6 +6,10 @@ RSpec.describe Apartment, type: :model do
 
     it { should belong_to(:building) }
 
+    it { should have_many(:furniture_packs) }
+
+    it { should have_many(:apartment_comments) }
+
     it { should have_many(:apartment_bookmarks) }
 
     it { should have_many(:apartment_photos) }

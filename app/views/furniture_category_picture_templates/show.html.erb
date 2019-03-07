@@ -26,11 +26,11 @@
 
     <dl>
       <dt>
-        Category
+        Furniture category
       </dt>
       <dd>
         <% if @furniture_category_picture.category.present? %>
-          <a href="/furniture_categories/<%= @furniture_category_picture.category_id %>">
+          <a href="/furniture_categories/<%= @furniture_category_picture.furniture_category_id %>">
             <%= @furniture_category_picture.category.items %>
           </a>
         <% end %>

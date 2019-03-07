@@ -1,0 +1,16 @@
+<form action="/create_pack_comment_from_furniture_pack" method="post">
+
+  <input type="hidden" name="furniture_pack_id" value="<%= @furniture_pack.id %>">
+
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @pack_comment.user_id), :class => "form-control") %>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pack comment
+  </button>
+</form>

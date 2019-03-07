@@ -51,11 +51,11 @@
       </dd>
 
       <dt>
-        Category
+        Furniture category
       </dt>
       <dd>
         <% if @furtniture_object.category.present? %>
-          <a href="/furniture_categories/<%= @furtniture_object.category_id %>">
+          <a href="/furniture_categories/<%= @furtniture_object.furniture_category_id %>">
             <%= @furtniture_object.category.items %>
           </a>
         <% end %>

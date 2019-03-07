@@ -1,0 +1,66 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Pack comment #<%= @pack_comment.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/pack_comments" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/pack_comments/<%= @pack_comment.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit pack comment
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_pack_comment/<%= @pack_comment.id %>" class="btn btn-block btn-outline-secondary">
+          Delete pack comment
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Furniture pack
+      </dt>
+      <dd>
+        <% if @pack_comment.pack.present? %>
+          <a href="/furniture_packs/<%= @pack_comment.furniture_pack_id %>">
+            <%= @pack_comment.pack.description %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <% if @pack_comment.user.present? %>
+          <a href="/users/<%= @pack_comment.user_id %>">
+            <%= @pack_comment.user.email %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@pack_comment.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@pack_comment.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

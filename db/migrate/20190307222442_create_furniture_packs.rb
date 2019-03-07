@@ -10,6 +10,7 @@ class CreateFurniturePacks < ActiveRecord::Migration[5.1]
       t.string :apartment_number_of_bedrooms
       t.string :apartment_number_of_bathrooms
       t.string :apartment_building_name
+      t.integer :apartment_id
 
       t.timestamps
     end

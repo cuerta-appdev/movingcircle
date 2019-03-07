@@ -1,6 +1,6 @@
 ActiveAdmin.register FurnitureCategoryPicture do
 
- permit_params :category_id, :picture
+ permit_params :furniture_category_id, :picture
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

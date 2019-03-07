@@ -5,6 +5,12 @@ class Apartment < ApplicationRecord
 
   belongs_to :building
 
+  has_many   :furniture_packs,
+             :dependent => :destroy
+
+  has_many   :apartment_comments,
+             :dependent => :destroy
+
   has_many   :apartment_bookmarks,
              :dependent => :destroy
 
