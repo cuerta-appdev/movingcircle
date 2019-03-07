@@ -1,0 +1,162 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All apartments
+    </h1>
+
+    <a href="/apartments/new" class="btn btn-block btn-outline-secondary">
+      Add a new apartment
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Floor plan
+        </th>
+
+        <th>
+          Building
+        </th>
+
+        <th>
+          Bedrooms
+        </th>
+
+        <th>
+          Bathrooms
+        </th>
+
+        <th>
+          Sq footage
+        </th>
+
+        <th>
+          Orientation
+        </th>
+
+        <th>
+          Floor
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @apartments.each do |apartment| %>
+      <tr>
+        <!-- Display apartment.id start -->
+        <td>
+          <%= apartment.id %>
+        </td>
+        <!-- Display apartment.id end -->
+
+        <!-- Display apartment.user_id start -->
+        <td>
+          <%= apartment.user_id %>
+        </td>
+        <!-- Display apartment.user_id end -->
+
+        <!-- Display apartment.description start -->
+        <td>
+          <%= apartment.description %>
+        </td>
+        <!-- Display apartment.description end -->
+
+        <!-- Display apartment.floor_plan start -->
+        <td>
+          <%= apartment.floor_plan %>
+        </td>
+        <!-- Display apartment.floor_plan end -->
+
+        <!-- Display apartment.building_id start -->
+        <td>
+          <%= apartment.building_id %>
+        </td>
+        <!-- Display apartment.building_id end -->
+
+        <!-- Display apartment.bedrooms start -->
+        <td>
+          <%= apartment.bedrooms %>
+        </td>
+        <!-- Display apartment.bedrooms end -->
+
+        <!-- Display apartment.bathrooms start -->
+        <td>
+          <%= apartment.bathrooms %>
+        </td>
+        <!-- Display apartment.bathrooms end -->
+
+        <!-- Display apartment.sq_footage start -->
+        <td>
+          <%= apartment.sq_footage %>
+        </td>
+        <!-- Display apartment.sq_footage end -->
+
+        <!-- Display apartment.orientation start -->
+        <td>
+          <%= apartment.orientation %>
+        </td>
+        <!-- Display apartment.orientation end -->
+
+        <!-- Display apartment.floor start -->
+        <td>
+          <%= apartment.floor %>
+        </td>
+        <!-- Display apartment.floor end -->
+
+        <!-- Display apartment.created_at start -->
+        <td>
+          <%= time_ago_in_words(apartment.created_at) %> ago
+        </td>
+        <!-- Display apartment.created_at end -->
+
+        <!-- Display apartment.updated_at start -->
+        <td>
+          <%= time_ago_in_words(apartment.updated_at) %> ago
+        </td>
+        <!-- Display apartment.updated_at end -->
+
+        <td>
+          <a href="/apartments/<%= apartment.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
