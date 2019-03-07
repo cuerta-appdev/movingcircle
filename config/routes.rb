@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Furniture pack resource:
+
+  # CREATE
+  get("/furniture_packs/new", { :controller => "furniture_packs", :action => "new_form" })
+  post("/create_furniture_pack", { :controller => "furniture_packs", :action => "create_row" })
+
+  # READ
+  get("/furniture_packs", { :controller => "furniture_packs", :action => "index" })
+  get("/furniture_packs/:id_to_display", { :controller => "furniture_packs", :action => "show" })
+
+  # UPDATE
+  get("/furniture_packs/:prefill_with_id/edit", { :controller => "furniture_packs", :action => "edit_form" })
+  post("/update_furniture_pack/:id_to_modify", { :controller => "furniture_packs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_furniture_pack/:id_to_remove", { :controller => "furniture_packs", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Apartment photo resource:
 
   # CREATE

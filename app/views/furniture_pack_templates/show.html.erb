@@ -1,0 +1,136 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Furniture pack #<%= @furniture_pack.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/furniture_packs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link furniture_pack start -->
+      <div class="col">
+        <a href="/furniture_packs/<%= @furniture_pack.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit furniture pack
+        </a>
+      </div>
+      <!-- Edit link furniture_pack end -->
+
+      <!-- Delete link furniture_pack start -->
+      <div class="col">
+        <a href="/delete_furniture_pack/<%= @furniture_pack.id %>" class="btn btn-block btn-outline-secondary">
+          Delete furniture pack
+        </a>
+      </div>
+      <!-- Delete link furniture_pack end -->
+    </div>
+
+    <dl>
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @furniture_pack.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @furniture_pack.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Price
+      </dt>
+      <!-- Display price start -->
+      <dd>
+        <%= @furniture_pack.price %>
+      </dd>
+      <!-- Display price end -->
+
+      <dt>
+        Number of items
+      </dt>
+      <!-- Display number_of_items start -->
+      <dd>
+        <%= @furniture_pack.number_of_items %>
+      </dd>
+      <!-- Display number_of_items end -->
+
+      <dt>
+        Storage conditions
+      </dt>
+      <!-- Display storage_conditions start -->
+      <dd>
+        <%= @furniture_pack.storage_conditions %>
+      </dd>
+      <!-- Display storage_conditions end -->
+
+      <dt>
+        Apartment sq footage
+      </dt>
+      <!-- Display apartment_sq_footage start -->
+      <dd>
+        <%= @furniture_pack.apartment_sq_footage %>
+      </dd>
+      <!-- Display apartment_sq_footage end -->
+
+      <dt>
+        Apartment number of bedrooms
+      </dt>
+      <!-- Display apartment_number_of_bedrooms start -->
+      <dd>
+        <%= @furniture_pack.apartment_number_of_bedrooms %>
+      </dd>
+      <!-- Display apartment_number_of_bedrooms end -->
+
+      <dt>
+        Apartment number of bathrooms
+      </dt>
+      <!-- Display apartment_number_of_bathrooms start -->
+      <dd>
+        <%= @furniture_pack.apartment_number_of_bathrooms %>
+      </dd>
+      <!-- Display apartment_number_of_bathrooms end -->
+
+      <dt>
+        Apartment building name
+      </dt>
+      <!-- Display apartment_building_name start -->
+      <dd>
+        <%= @furniture_pack.apartment_building_name %>
+      </dd>
+      <!-- Display apartment_building_name end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@furniture_pack.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@furniture_pack.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
