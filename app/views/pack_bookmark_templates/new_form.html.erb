@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for pack_id start -->
-    <input type="text" id="pack_id" name="pack_id" class="form-control">
+    <%= select_tag(:pack_id, options_from_collection_for_select(FurniturePack.all, :id, :description, @pack_bookmark.pack_id), :class => "form-control") %>
     <!-- Input for pack_id end -->
   </div>
   <!-- Label and input for pack_id end -->
