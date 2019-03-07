@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:pack_bookmarks) }
+
     it { should have_many(:apartments) }
 
     it { should have_many(:furniture_packs) }
