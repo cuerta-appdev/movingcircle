@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for apartment_id start -->
-    <input type="text" id="apartment_id" name="apartment_id" class="form-control">
+    <%= select_tag(:apartment_id, options_from_collection_for_select(Apartment.all, :id, :user_id, @apartment_photo.apartment_id), :class => "form-control") %>
     <!-- Input for apartment_id end -->
   </div>
   <!-- Label and input for apartment_id end -->
