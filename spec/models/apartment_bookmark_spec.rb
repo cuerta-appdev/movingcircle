@@ -4,6 +4,8 @@ RSpec.describe ApartmentBookmark, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:apartment) }
+
     it { should belong_to(:user) }
 
     end

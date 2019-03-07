@@ -1,6 +1,9 @@
 class Apartment < ApplicationRecord
   # Direct associations
 
+  has_many   :apartment_bookmarks,
+             :dependent => :destroy
+
   has_many   :apartment_photos,
              :dependent => :destroy
 
