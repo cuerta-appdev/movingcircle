@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link furniture_category start -->
       <div class="col">
         <a href="/furniture_categories/<%= @furniture_category.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit furniture category
         </a>
       </div>
-      <!-- Edit link furniture_category end -->
 
-      <!-- Delete link furniture_category start -->
       <div class="col">
         <a href="/delete_furniture_category/<%= @furniture_category.id %>" class="btn btn-block btn-outline-secondary">
           Delete furniture category
         </a>
       </div>
-      <!-- Delete link furniture_category end -->
     </div>
 
     <dl>
       <dt>
         Items
       </dt>
-      <!-- Display items start -->
       <dd>
         <%= @furniture_category.items %>
       </dd>
-      <!-- Display items end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @furniture_category.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Furniture pack
       </dt>
-      <!-- Display furniture_pack_id start -->
       <dd>
         <% if @furniture_category.furniture_pack.present? %>
           <a href="/furniture_packs/<%= @furniture_category.furniture_pack_id %>">
@@ -58,48 +49,38 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display furniture_pack_id end -->
 
       <dt>
         Number of items
       </dt>
-      <!-- Display number_of_items start -->
       <dd>
         <%= @furniture_category.number_of_items %>
       </dd>
-      <!-- Display number_of_items end -->
 
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @furniture_category.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@furniture_category.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@furniture_category.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "furniture_category_templates/furniture_category_furniture_category_pictures" %>
@@ -111,4 +92,3 @@
     <%= render partial: "furniture_category_templates/furniture_category_furtniture_objects" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

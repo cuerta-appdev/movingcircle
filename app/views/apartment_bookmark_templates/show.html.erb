@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link apartment_bookmark start -->
       <div class="col">
         <a href="/apartment_bookmarks/<%= @apartment_bookmark.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit apartment bookmark
         </a>
       </div>
-      <!-- Edit link apartment_bookmark end -->
 
-      <!-- Delete link apartment_bookmark start -->
       <div class="col">
         <a href="/delete_apartment_bookmark/<%= @apartment_bookmark.id %>" class="btn btn-block btn-outline-secondary">
           Delete apartment bookmark
         </a>
       </div>
-      <!-- Delete link apartment_bookmark end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @apartment_bookmark.user.present? %>
           <a href="/users/<%= @apartment_bookmark.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Apartment
       </dt>
-      <!-- Display apartment_id start -->
       <dd>
         <% if @apartment_bookmark.apartment.present? %>
           <a href="/apartments/<%= @apartment_bookmark.apartment_id %>">
@@ -53,37 +46,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display apartment_id end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @apartment_bookmark.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@apartment_bookmark.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@apartment_bookmark.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @building_amenity.errors.any? %>
   <% @building_amenity.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,33 +12,23 @@
 
 <hr>
 
-<!-- Form building_amenity start -->
 <form action="/update_building_amenity/<%= @building_amenity.id %>" method="post">
-<!-- Form building_amenity end -->
 
-  <!-- Label and input for building_id start -->
   <div class="form-group">
     <label for="building_id">
       Building
     </label>
 
-    <!-- Input for building_id start -->
     <%= select_tag(:building_id, options_from_collection_for_select(Building.all, :id, :apartment_id, @building_amenity.building_id), :class => "form-control") %>
-    <!-- Input for building_id end -->
   </div>
-  <!-- Label and input for building_id end -->
 
-  <!-- Label and input for amenity_id start -->
   <div class="form-group">
     <label for="amenity_id">
       Amenity
     </label>
 
-    <!-- Input for amenity_id start -->
     <%= select_tag(:amenity_id, options_from_collection_for_select(Amenity.all, :id, :name, @building_amenity.amenity_id), :class => "form-control") %>
-    <!-- Input for amenity_id end -->
   </div>
-  <!-- Label and input for amenity_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update building amenity

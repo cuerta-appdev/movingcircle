@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "building_templates/buildings_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "building_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -66,47 +62,33 @@
 
       <% @buildings.each do |building| %>
       <tr>
-        <!-- Display building.id start -->
         <td>
           <%= building.id %>
         </td>
-        <!-- Display building.id end -->
 
-        <!-- Display building.apartment_id start -->
         <td>
           <%= building.apartment_id %>
         </td>
-        <!-- Display building.apartment_id end -->
 
-        <!-- Display building.address start -->
         <td>
           <%= building.address %>
         </td>
-        <!-- Display building.address end -->
 
-        <!-- Display building.neighborhood start -->
         <td>
           <%= building.neighborhood %>
         </td>
-        <!-- Display building.neighborhood end -->
 
-        <!-- Display building.contact_info start -->
         <td>
           <%= building.contact_info %>
         </td>
-        <!-- Display building.contact_info end -->
 
-        <!-- Display building.created_at start -->
         <td>
           <%= time_ago_in_words(building.created_at) %> ago
         </td>
-        <!-- Display building.created_at end -->
 
-        <!-- Display building.updated_at start -->
         <td>
           <%= time_ago_in_words(building.updated_at) %> ago
         </td>
-        <!-- Display building.updated_at end -->
 
         <td>
           <a href="/buildings/<%= building.id %>">

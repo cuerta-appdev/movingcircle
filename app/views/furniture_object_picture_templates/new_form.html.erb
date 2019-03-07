@@ -5,33 +5,23 @@
 
 <hr>
 
-<!-- Form furniture_object_picture start -->
 <form action="/create_furniture_object_picture" method="post" enctype="multipart/form-data">
-<!-- Form furniture_object_picture end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <label for="picture">
       Picture
     </label>
 
-    <!-- Input for picture start -->
     <input type="file" id="picture" name="picture" class="form-control">
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
-  <!-- Label and input for furniture_object_id start -->
   <div class="form-group">
     <label for="furniture_object_id">
       Furniture object
     </label>
 
-    <!-- Input for furniture_object_id start -->
     <%= select_tag(:furniture_object_id, options_from_collection_for_select(FurtnitureObject.all, :id, :price, @furniture_object_picture.furniture_object_id), :class => "form-control") %>
-    <!-- Input for furniture_object_id end -->
   </div>
-  <!-- Label and input for furniture_object_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create furniture object picture

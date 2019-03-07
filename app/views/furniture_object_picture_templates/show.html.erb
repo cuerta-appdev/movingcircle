@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link furniture_object_picture start -->
       <div class="col">
         <a href="/furniture_object_pictures/<%= @furniture_object_picture.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit furniture object picture
         </a>
       </div>
-      <!-- Edit link furniture_object_picture end -->
 
-      <!-- Delete link furniture_object_picture start -->
       <div class="col">
         <a href="/delete_furniture_object_picture/<%= @furniture_object_picture.id %>" class="btn btn-block btn-outline-secondary">
           Delete furniture object picture
         </a>
       </div>
-      <!-- Delete link furniture_object_picture end -->
     </div>
 
     <dl>
       <dt>
         Picture
       </dt>
-      <!-- Display picture start -->
       <dd>
         <img src="<%= @furniture_object_picture.picture %>" class="img-fluid">
       </dd>
-      <!-- Display picture end -->
 
       <dt>
         Furniture object
       </dt>
-      <!-- Display furniture_object_id start -->
       <dd>
         <% if @furniture_object_picture.furniture_object.present? %>
           <a href="/furtniture_objects/<%= @furniture_object_picture.furniture_object_id %>">
@@ -49,28 +42,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display furniture_object_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@furniture_object_picture.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@furniture_object_picture.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

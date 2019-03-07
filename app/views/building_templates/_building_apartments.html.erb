@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @building.apartments.each do |apartment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/apartments/<%= apartment.id %>">
           <%= apartment.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_apartment_from_building/<%= apartment.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="building_apartments_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "building_templates/building_apartments_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

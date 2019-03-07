@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "amenity_picture_templates/amenity_pictures_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,25 +54,18 @@
 
       <% @amenity_pictures.each do |amenity_picture| %>
       <tr>
-        <!-- Display amenity_picture.id start -->
         <td>
           <%= amenity_picture.id %>
         </td>
-        <!-- Display amenity_picture.id end -->
 
-        <!-- Display amenity_picture.picture start -->
         <td>
           <img src='<%= amenity_picture.picture %>' class='img-fluid'>
         </td>
-        <!-- Display amenity_picture.picture end -->
 
-        <!-- Display amenity_picture.description start -->
         <td>
           <%= amenity_picture.description %>
         </td>
-        <!-- Display amenity_picture.description end -->
 
-        <!-- Display amenity_picture.building_amenity_id start -->
         <td>
           <% if amenity_picture.building_amenity.present? %>
             <a href="/building_amenities/<%= amenity_picture.building_amenity.id %>">
@@ -84,19 +73,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display amenity_picture.building_amenity_id end -->
 
-        <!-- Display amenity_picture.created_at start -->
         <td>
           <%= time_ago_in_words(amenity_picture.created_at) %> ago
         </td>
-        <!-- Display amenity_picture.created_at end -->
 
-        <!-- Display amenity_picture.updated_at start -->
         <td>
           <%= time_ago_in_words(amenity_picture.updated_at) %> ago
         </td>
-        <!-- Display amenity_picture.updated_at end -->
 
         <td>
           <a href="/amenity_pictures/<%= amenity_picture.id %>">

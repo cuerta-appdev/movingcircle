@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @furniture_category_picture.errors.any? %>
   <% @furniture_category_picture.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,34 +12,24 @@
 
 <hr>
 
-<!-- Form furniture_category_picture start -->
 <form action="/update_furniture_category_picture/<%= @furniture_category_picture.id %>" method="post" enctype="multipart/form-data">
-<!-- Form furniture_category_picture end -->
 
-  <!-- Label and input for category_id start -->
   <div class="form-group">
     <label for="category_id">
       Category
     </label>
 
-    <!-- Input for category_id start -->
     <%= select_tag(:category_id, options_from_collection_for_select(FurnitureCategory.all, :id, :items, @furniture_category_picture.category_id), :class => "form-control") %>
-    <!-- Input for category_id end -->
   </div>
-  <!-- Label and input for category_id end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <label for="picture">
       Picture
     </label>
 
-    <!-- Input for picture start -->
     <%= cl_image_tag(@furniture_category_picture.picture.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="picture" name="picture" class="form-control">
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update furniture category picture

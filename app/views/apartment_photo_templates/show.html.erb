@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link apartment_photo start -->
       <div class="col">
         <a href="/apartment_photos/<%= @apartment_photo.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit apartment photo
         </a>
       </div>
-      <!-- Edit link apartment_photo end -->
 
-      <!-- Delete link apartment_photo start -->
       <div class="col">
         <a href="/delete_apartment_photo/<%= @apartment_photo.id %>" class="btn btn-block btn-outline-secondary">
           Delete apartment photo
         </a>
       </div>
-      <!-- Delete link apartment_photo end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @apartment_photo.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Apartment
       </dt>
-      <!-- Display apartment_id start -->
       <dd>
         <% if @apartment_photo.apartment.present? %>
           <a href="/apartments/<%= @apartment_photo.apartment_id %>">
@@ -49,37 +42,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display apartment_id end -->
 
       <dt>
         Photo
       </dt>
-      <!-- Display photo start -->
       <dd>
         <img src="<%= @apartment_photo.photo %>" class="img-fluid">
       </dd>
-      <!-- Display photo end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@apartment_photo.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@apartment_photo.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

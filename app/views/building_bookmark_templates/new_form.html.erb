@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form building_bookmark start -->
 <form action="/create_building_bookmark" method="post">
-<!-- Form building_bookmark end -->
 
-  <!-- Label and input for building_id start -->
   <div class="form-group">
     <label for="building_id">
       Building
     </label>
 
-    <!-- Input for building_id start -->
     <%= select_tag(:building_id, options_from_collection_for_select(Building.all, :id, :apartment_id, @building_bookmark.building_id), :class => "form-control") %>
-    <!-- Input for building_id end -->
   </div>
-  <!-- Label and input for building_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @building_bookmark.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create building bookmark

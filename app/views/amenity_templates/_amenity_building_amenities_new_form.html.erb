@@ -1,23 +1,14 @@
-<!-- Form building_amenity start -->
 <form action="/create_building_amenity_from_amenity" method="post">
-<!-- Form building_amenity end -->
 
-  <!-- Label and input for building_id start -->
   <div class="form-group">
     <label for="building_id">
       Building
     </label>
 
-    <!-- Input for building_id start -->
     <%= select_tag(:building_id, options_from_collection_for_select(Building.all, :id, :apartment_id, @building_amenity.building_id), :class => "form-control") %>
-    <!-- Input for building_id end -->
   </div>
-  <!-- Label and input for building_id end -->
 
-  <!-- Label and input for amenity_id start -->
-  <!-- Input for amenity_id start -->
   <input type="hidden" name="amenity_id" value="<%= @amenity.id %>">
-  <!-- Input for amenity_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create building amenity

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @building.present? %>
   <% if @building.errors.any? %>
     <% @building.errors.full_messages.each do |message| %>
@@ -16,57 +15,39 @@
 
 <hr>
 
-<!-- Form building start -->
 <form action="/create_building" method="post">
-<!-- Form building end -->
 
-  <!-- Label and input for apartment_id start -->
   <div class="form-group">
     <label for="apartment_id">
       Apartment
     </label>
 
-    <!-- Input for apartment_id start -->
     <input type="text" id="apartment_id" name="apartment_id" class="form-control" value="<%= @building.apartment_id %>">
-    <!-- Input for apartment_id end -->
   </div>
-  <!-- Label and input for apartment_id end -->
 
-  <!-- Label and input for address start -->
   <div class="form-group">
     <label for="address">
       Address
     </label>
 
-    <!-- Input for address start -->
     <input type="text" id="address" name="address" class="form-control" value="<%= @building.address %>">
-    <!-- Input for address end -->
   </div>
-  <!-- Label and input for address end -->
 
-  <!-- Label and input for neighborhood start -->
   <div class="form-group">
     <label for="neighborhood">
       Neighborhood
     </label>
 
-    <!-- Input for neighborhood start -->
     <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="<%= @building.neighborhood %>">
-    <!-- Input for neighborhood end -->
   </div>
-  <!-- Label and input for neighborhood end -->
 
-  <!-- Label and input for contact_info start -->
   <div class="form-group">
     <label for="contact_info">
       Contact info
     </label>
 
-    <!-- Input for contact_info start -->
     <input type="text" id="contact_info" name="contact_info" class="form-control" value="<%= @building.contact_info %>">
-    <!-- Input for contact_info end -->
   </div>
-  <!-- Label and input for contact_info end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create building

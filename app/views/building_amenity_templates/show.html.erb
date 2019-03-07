@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link building_amenity start -->
       <div class="col">
         <a href="/building_amenities/<%= @building_amenity.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit building amenity
         </a>
       </div>
-      <!-- Edit link building_amenity end -->
 
-      <!-- Delete link building_amenity start -->
       <div class="col">
         <a href="/delete_building_amenity/<%= @building_amenity.id %>" class="btn btn-block btn-outline-secondary">
           Delete building amenity
         </a>
       </div>
-      <!-- Delete link building_amenity end -->
     </div>
 
     <dl>
       <dt>
         Building
       </dt>
-      <!-- Display building_id start -->
       <dd>
         <% if @building_amenity.building.present? %>
           <a href="/buildings/<%= @building_amenity.building_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display building_id end -->
 
       <dt>
         Amenity
       </dt>
-      <!-- Display amenity_id start -->
       <dd>
         <% if @building_amenity.amenity.present? %>
           <a href="/amenities/<%= @building_amenity.amenity_id %>">
@@ -53,33 +46,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display amenity_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@building_amenity.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@building_amenity.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "building_amenity_templates/building_amenity_amenity_pictures" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

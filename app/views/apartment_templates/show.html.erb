@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link apartment start -->
       <div class="col">
         <a href="/apartments/<%= @apartment.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit apartment
         </a>
       </div>
-      <!-- Edit link apartment end -->
 
-      <!-- Delete link apartment start -->
       <div class="col">
         <a href="/delete_apartment/<%= @apartment.id %>" class="btn btn-block btn-outline-secondary">
           Delete apartment
         </a>
       </div>
-      <!-- Delete link apartment end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @apartment.user.present? %>
           <a href="/users/<%= @apartment.user_id %>">
@@ -40,30 +35,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @apartment.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Floor plan
       </dt>
-      <!-- Display floor_plan start -->
       <dd>
         <img src="<%= @apartment.floor_plan %>" class="img-fluid">
       </dd>
-      <!-- Display floor_plan end -->
 
       <dt>
         Building
       </dt>
-      <!-- Display building_id start -->
       <dd>
         <% if @apartment.building.present? %>
           <a href="/buildings/<%= @apartment.building_id %>">
@@ -71,75 +60,59 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display building_id end -->
 
       <dt>
         Bedrooms
       </dt>
-      <!-- Display bedrooms start -->
       <dd>
         <%= @apartment.bedrooms %>
       </dd>
-      <!-- Display bedrooms end -->
 
       <dt>
         Bathrooms
       </dt>
-      <!-- Display bathrooms start -->
       <dd>
         <%= @apartment.bathrooms %>
       </dd>
-      <!-- Display bathrooms end -->
 
       <dt>
         Sq footage
       </dt>
-      <!-- Display sq_footage start -->
       <dd>
         <%= @apartment.sq_footage %>
       </dd>
-      <!-- Display sq_footage end -->
 
       <dt>
         Orientation
       </dt>
-      <!-- Display orientation start -->
       <dd>
         <%= @apartment.orientation %>
       </dd>
-      <!-- Display orientation end -->
 
       <dt>
         Floor
       </dt>
-      <!-- Display floor start -->
       <dd>
         <%= @apartment.floor %>
       </dd>
-      <!-- Display floor end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@apartment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@apartment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "apartment_templates/apartment_apartment_photos" %>
@@ -151,4 +124,3 @@
     <%= render partial: "apartment_templates/apartment_apartment_bookmarks" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

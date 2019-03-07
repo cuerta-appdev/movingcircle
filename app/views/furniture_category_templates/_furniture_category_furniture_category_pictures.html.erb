@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @furniture_category.furniture_category_pictures.each do |furniture_category_picture| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/furniture_category_pictures/<%= furniture_category_picture.id %>">
           <%= furniture_category_picture.category_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_furniture_category_picture_from_category/<%= furniture_category_picture.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="furniture_category_furniture_category_pictures_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "furniture_category_templates/furniture_category_furniture_category_pictures_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

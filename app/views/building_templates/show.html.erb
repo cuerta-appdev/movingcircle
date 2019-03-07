@@ -11,84 +11,67 @@
         </a>
       </div>
 
-      <!-- Edit link building start -->
       <div class="col">
         <a href="/buildings/<%= @building.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit building
         </a>
       </div>
-      <!-- Edit link building end -->
 
-      <!-- Delete link building start -->
       <div class="col">
         <a href="/delete_building/<%= @building.id %>" class="btn btn-block btn-outline-secondary">
           Delete building
         </a>
       </div>
-      <!-- Delete link building end -->
     </div>
 
     <dl>
       <dt>
         Apartment
       </dt>
-      <!-- Display apartment_id start -->
       <dd>
         <%= @building.apartment_id %>
       </dd>
-      <!-- Display apartment_id end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "building_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Neighborhood
       </dt>
-      <!-- Display neighborhood start -->
       <dd>
         <%= @building.neighborhood %>
       </dd>
-      <!-- Display neighborhood end -->
 
       <dt>
         Contact info
       </dt>
-      <!-- Display contact_info start -->
       <dd>
         <%= @building.contact_info %>
       </dd>
-      <!-- Display contact_info end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@building.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@building.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "building_templates/building_building_amenities" %>
@@ -106,4 +89,3 @@
     <%= render partial: "building_templates/building_building_bookmarks" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

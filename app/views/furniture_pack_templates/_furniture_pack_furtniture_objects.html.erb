@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @furniture_pack.furtniture_objects.each do |furtniture_object| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/furtniture_objects/<%= furtniture_object.id %>">
           <%= furtniture_object.price %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_furtniture_object_from_furniture_pack/<%= furtniture_object.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="furniture_pack_furtniture_objects_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "furniture_pack_templates/furniture_pack_furtniture_objects_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

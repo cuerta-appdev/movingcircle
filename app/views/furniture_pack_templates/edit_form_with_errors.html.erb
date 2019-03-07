@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @furniture_pack.errors.any? %>
   <% @furniture_pack.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,108 +12,72 @@
 
 <hr>
 
-<!-- Form furniture_pack start -->
 <form action="/update_furniture_pack/<%= @furniture_pack.id %>" method="post">
-<!-- Form furniture_pack end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <input type="text" id="description" name="description" class="form-control" value="<%= @furniture_pack.description %>">
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for price start -->
   <div class="form-group">
     <label for="price">
       Price
     </label>
 
-    <!-- Input for price start -->
     <input type="text" id="price" name="price" class="form-control" value="<%= @furniture_pack.price %>">
-    <!-- Input for price end -->
   </div>
-  <!-- Label and input for price end -->
 
-  <!-- Label and input for number_of_items start -->
   <div class="form-group">
     <label for="number_of_items">
       Number of items
     </label>
 
-    <!-- Input for number_of_items start -->
     <input type="text" id="number_of_items" name="number_of_items" class="form-control" value="<%= @furniture_pack.number_of_items %>">
-    <!-- Input for number_of_items end -->
   </div>
-  <!-- Label and input for number_of_items end -->
 
-  <!-- Label and input for storage_conditions start -->
   <div class="form-group">
     <label for="storage_conditions">
       Storage conditions
     </label>
 
-    <!-- Input for storage_conditions start -->
     <input type="text" id="storage_conditions" name="storage_conditions" class="form-control" value="<%= @furniture_pack.storage_conditions %>">
-    <!-- Input for storage_conditions end -->
   </div>
-  <!-- Label and input for storage_conditions end -->
 
-  <!-- Label and input for apartment_sq_footage start -->
   <div class="form-group">
     <label for="apartment_sq_footage">
       Apartment sq footage
     </label>
 
-    <!-- Input for apartment_sq_footage start -->
     <input type="text" id="apartment_sq_footage" name="apartment_sq_footage" class="form-control" value="<%= @furniture_pack.apartment_sq_footage %>">
-    <!-- Input for apartment_sq_footage end -->
   </div>
-  <!-- Label and input for apartment_sq_footage end -->
 
-  <!-- Label and input for apartment_number_of_bedrooms start -->
   <div class="form-group">
     <label for="apartment_number_of_bedrooms">
       Apartment number of bedrooms
     </label>
 
-    <!-- Input for apartment_number_of_bedrooms start -->
     <input type="text" id="apartment_number_of_bedrooms" name="apartment_number_of_bedrooms" class="form-control" value="<%= @furniture_pack.apartment_number_of_bedrooms %>">
-    <!-- Input for apartment_number_of_bedrooms end -->
   </div>
-  <!-- Label and input for apartment_number_of_bedrooms end -->
 
-  <!-- Label and input for apartment_number_of_bathrooms start -->
   <div class="form-group">
     <label for="apartment_number_of_bathrooms">
       Apartment number of bathrooms
     </label>
 
-    <!-- Input for apartment_number_of_bathrooms start -->
     <input type="text" id="apartment_number_of_bathrooms" name="apartment_number_of_bathrooms" class="form-control" value="<%= @furniture_pack.apartment_number_of_bathrooms %>">
-    <!-- Input for apartment_number_of_bathrooms end -->
   </div>
-  <!-- Label and input for apartment_number_of_bathrooms end -->
 
-  <!-- Label and input for apartment_building_name start -->
   <div class="form-group">
     <label for="apartment_building_name">
       Apartment building name
     </label>
 
-    <!-- Input for apartment_building_name start -->
     <input type="text" id="apartment_building_name" name="apartment_building_name" class="form-control" value="<%= @furniture_pack.apartment_building_name %>">
-    <!-- Input for apartment_building_name end -->
   </div>
-  <!-- Label and input for apartment_building_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update furniture pack

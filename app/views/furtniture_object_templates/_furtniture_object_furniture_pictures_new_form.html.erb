@@ -1,23 +1,14 @@
-<!-- Form furniture_object_picture start -->
 <form action="/create_furniture_object_picture" method="post" enctype="multipart/form-data">
-<!-- Form furniture_object_picture end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <label for="picture">
       Picture
     </label>
 
-    <!-- Input for picture start -->
     <input type="file" id="picture" name="picture" class="form-control">
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
-  <!-- Label and input for furniture_object_id start -->
-  <!-- Input for furniture_object_id start -->
   <input type="hidden" name="furniture_object_id" value="<%= @furtniture_object.id %>">
-  <!-- Input for furniture_object_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create furniture object picture

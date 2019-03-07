@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link building_bookmark start -->
       <div class="col">
         <a href="/building_bookmarks/<%= @building_bookmark.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit building bookmark
         </a>
       </div>
-      <!-- Edit link building_bookmark end -->
 
-      <!-- Delete link building_bookmark start -->
       <div class="col">
         <a href="/delete_building_bookmark/<%= @building_bookmark.id %>" class="btn btn-block btn-outline-secondary">
           Delete building bookmark
         </a>
       </div>
-      <!-- Delete link building_bookmark end -->
     </div>
 
     <dl>
       <dt>
         Building
       </dt>
-      <!-- Display building_id start -->
       <dd>
         <% if @building_bookmark.building.present? %>
           <a href="/buildings/<%= @building_bookmark.building_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display building_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @building_bookmark.user.present? %>
           <a href="/users/<%= @building_bookmark.user_id %>">
@@ -53,37 +46,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @building_bookmark.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@building_bookmark.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@building_bookmark.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

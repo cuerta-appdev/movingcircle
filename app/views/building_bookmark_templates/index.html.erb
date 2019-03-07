@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "building_bookmark_templates/building_bookmarks_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,13 +54,10 @@
 
       <% @building_bookmarks.each do |building_bookmark| %>
       <tr>
-        <!-- Display building_bookmark.id start -->
         <td>
           <%= building_bookmark.id %>
         </td>
-        <!-- Display building_bookmark.id end -->
 
-        <!-- Display building_bookmark.building_id start -->
         <td>
           <% if building_bookmark.building.present? %>
             <a href="/buildings/<%= building_bookmark.building.id %>">
@@ -72,9 +65,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display building_bookmark.building_id end -->
 
-        <!-- Display building_bookmark.user_id start -->
         <td>
           <% if building_bookmark.user.present? %>
             <a href="/users/<%= building_bookmark.user.id %>">
@@ -82,25 +73,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display building_bookmark.user_id end -->
 
-        <!-- Display building_bookmark.name start -->
         <td>
           <%= building_bookmark.name %>
         </td>
-        <!-- Display building_bookmark.name end -->
 
-        <!-- Display building_bookmark.created_at start -->
         <td>
           <%= time_ago_in_words(building_bookmark.created_at) %> ago
         </td>
-        <!-- Display building_bookmark.created_at end -->
 
-        <!-- Display building_bookmark.updated_at start -->
         <td>
           <%= time_ago_in_words(building_bookmark.updated_at) %> ago
         </td>
-        <!-- Display building_bookmark.updated_at end -->
 
         <td>
           <a href="/building_bookmarks/<%= building_bookmark.id %>">

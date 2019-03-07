@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link furtniture_object start -->
       <div class="col">
         <a href="/furtniture_objects/<%= @furtniture_object.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit furtniture object
         </a>
       </div>
-      <!-- Edit link furtniture_object end -->
 
-      <!-- Delete link furtniture_object start -->
       <div class="col">
         <a href="/delete_furtniture_object/<%= @furtniture_object.id %>" class="btn btn-block btn-outline-secondary">
           Delete furtniture object
         </a>
       </div>
-      <!-- Delete link furtniture_object end -->
     </div>
 
     <dl>
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @furtniture_object.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @furtniture_object.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Furniture pack
       </dt>
-      <!-- Display furniture_pack_id start -->
       <dd>
         <% if @furtniture_object.furniture_pack.present? %>
           <a href="/furniture_packs/<%= @furtniture_object.furniture_pack_id %>">
@@ -58,12 +49,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display furniture_pack_id end -->
 
       <dt>
         Category
       </dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @furtniture_object.category.present? %>
           <a href="/furniture_categories/<%= @furtniture_object.category_id %>">
@@ -71,42 +60,33 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @furtniture_object.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@furtniture_object.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@furtniture_object.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "furtniture_object_templates/furtniture_object_furniture_pictures" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

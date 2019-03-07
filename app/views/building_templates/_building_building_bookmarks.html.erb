@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @building.building_bookmarks.each do |building_bookmark| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/building_bookmarks/<%= building_bookmark.id %>">
           <%= building_bookmark.building_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_building_bookmark_from_building/<%= building_bookmark.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="building_building_bookmarks_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "building_templates/building_building_bookmarks_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

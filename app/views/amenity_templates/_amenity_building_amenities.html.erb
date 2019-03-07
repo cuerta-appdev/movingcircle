@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @amenity.building_amenities.each do |building_amenity| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/building_amenities/<%= building_amenity.id %>">
           <%= building_amenity.building_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_building_amenity_from_amenity/<%= building_amenity.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="amenity_building_amenities_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "amenity_templates/amenity_building_amenities_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

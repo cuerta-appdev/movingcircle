@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link furniture_category_picture start -->
       <div class="col">
         <a href="/furniture_category_pictures/<%= @furniture_category_picture.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit furniture category picture
         </a>
       </div>
-      <!-- Edit link furniture_category_picture end -->
 
-      <!-- Delete link furniture_category_picture start -->
       <div class="col">
         <a href="/delete_furniture_category_picture/<%= @furniture_category_picture.id %>" class="btn btn-block btn-outline-secondary">
           Delete furniture category picture
         </a>
       </div>
-      <!-- Delete link furniture_category_picture end -->
     </div>
 
     <dl>
       <dt>
         Category
       </dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @furniture_category_picture.category.present? %>
           <a href="/furniture_categories/<%= @furniture_category_picture.category_id %>">
@@ -40,37 +35,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>
         Picture
       </dt>
-      <!-- Display picture start -->
       <dd>
         <img src="<%= @furniture_category_picture.picture %>" class="img-fluid">
       </dd>
-      <!-- Display picture end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@furniture_category_picture.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@furniture_category_picture.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

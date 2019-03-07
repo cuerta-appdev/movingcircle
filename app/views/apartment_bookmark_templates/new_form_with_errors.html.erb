@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @apartment_bookmark.present? %>
   <% if @apartment_bookmark.errors.any? %>
     <% @apartment_bookmark.errors.full_messages.each do |message| %>
@@ -16,45 +15,31 @@
 
 <hr>
 
-<!-- Form apartment_bookmark start -->
 <form action="/create_apartment_bookmark" method="post">
-<!-- Form apartment_bookmark end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @apartment_bookmark.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for apartment_id start -->
   <div class="form-group">
     <label for="apartment_id">
       Apartment
     </label>
 
-    <!-- Input for apartment_id start -->
     <%= select_tag(:apartment_id, options_from_collection_for_select(Apartment.all, :id, :user_id, @apartment_bookmark.apartment_id), :class => "form-control") %>
-    <!-- Input for apartment_id end -->
   </div>
-  <!-- Label and input for apartment_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @apartment_bookmark.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create apartment bookmark
