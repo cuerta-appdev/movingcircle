@@ -92,7 +92,11 @@
 
         <!-- Display furniture_pack.user_id start -->
         <td>
-          <%= furniture_pack.user.email %>
+          <% if furniture_pack.user.present? %>
+            <a href="/users/<%= furniture_pack.user.id %>">
+              <%= furniture_pack.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display furniture_pack.user_id end -->
 

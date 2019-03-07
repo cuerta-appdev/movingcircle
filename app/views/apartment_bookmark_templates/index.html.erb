@@ -62,13 +62,21 @@
 
         <!-- Display apartment_bookmark.user_id start -->
         <td>
-          <%= apartment_bookmark.user.email %>
+          <% if apartment_bookmark.user.present? %>
+            <a href="/users/<%= apartment_bookmark.user.id %>">
+              <%= apartment_bookmark.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display apartment_bookmark.user_id end -->
 
         <!-- Display apartment_bookmark.apartment_id start -->
         <td>
-          <%= apartment_bookmark.apartment.user_id %>
+          <% if apartment_bookmark.apartment.present? %>
+            <a href="/apartments/<%= apartment_bookmark.apartment.id %>">
+              <%= apartment_bookmark.apartment.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display apartment_bookmark.apartment_id end -->
 

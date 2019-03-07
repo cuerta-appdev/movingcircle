@@ -74,7 +74,11 @@
 
         <!-- Display amenity_picture.building_amenity_id start -->
         <td>
-          <%= amenity_picture.building_amenity.building_id %>
+          <% if amenity_picture.building_amenity.present? %>
+            <a href="/building_amenities/<%= amenity_picture.building_amenity.id %>">
+              <%= amenity_picture.building_amenity.building_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display amenity_picture.building_amenity_id end -->
 

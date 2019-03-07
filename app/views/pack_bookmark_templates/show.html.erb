@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @pack_bookmark.user_id %>
+        <% if @pack_bookmark.user.present? %>
+          <a href="/users/<%= @pack_bookmark.user_id %>">
+            <%= @pack_bookmark.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display pack_id start -->
       <dd>
-        <%= @pack_bookmark.pack_id %>
+        <% if @pack_bookmark.pack.present? %>
+          <a href="/furniture_packs/<%= @pack_bookmark.pack_id %>">
+            <%= @pack_bookmark.pack.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display pack_id end -->
 

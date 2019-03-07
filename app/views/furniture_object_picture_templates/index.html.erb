@@ -64,7 +64,11 @@
 
         <!-- Display furniture_object_picture.furniture_object_id start -->
         <td>
-          <%= furniture_object_picture.furniture_object.price %>
+          <% if furniture_object_picture.furniture_object.present? %>
+            <a href="/furtniture_objects/<%= furniture_object_picture.furniture_object.id %>">
+              <%= furniture_object_picture.furniture_object.price %>
+            </a>
+          <% end %>
         </td>
         <!-- Display furniture_object_picture.furniture_object_id end -->
 

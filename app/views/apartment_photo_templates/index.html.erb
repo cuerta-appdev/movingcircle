@@ -68,7 +68,11 @@
 
         <!-- Display apartment_photo.apartment_id start -->
         <td>
-          <%= apartment_photo.apartment.user_id %>
+          <% if apartment_photo.apartment.present? %>
+            <a href="/apartments/<%= apartment_photo.apartment.id %>">
+              <%= apartment_photo.apartment.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display apartment_photo.apartment_id end -->
 

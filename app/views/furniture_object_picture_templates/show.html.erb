@@ -43,7 +43,11 @@
       </dt>
       <!-- Display furniture_object_id start -->
       <dd>
-        <%= @furniture_object_picture.furniture_object_id %>
+        <% if @furniture_object_picture.furniture_object.present? %>
+          <a href="/furtniture_objects/<%= @furniture_object_picture.furniture_object_id %>">
+            <%= @furniture_object_picture.furniture_object.price %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display furniture_object_id end -->
 

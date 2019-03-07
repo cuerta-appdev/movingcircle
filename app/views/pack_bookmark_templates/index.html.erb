@@ -62,13 +62,21 @@
 
         <!-- Display pack_bookmark.user_id start -->
         <td>
-          <%= pack_bookmark.user.email %>
+          <% if pack_bookmark.user.present? %>
+            <a href="/users/<%= pack_bookmark.user.id %>">
+              <%= pack_bookmark.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pack_bookmark.user_id end -->
 
         <!-- Display pack_bookmark.pack_id start -->
         <td>
-          <%= pack_bookmark.pack.description %>
+          <% if pack_bookmark.pack.present? %>
+            <a href="/furniture_packs/<%= pack_bookmark.pack.id %>">
+              <%= pack_bookmark.pack.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pack_bookmark.pack_id end -->
 

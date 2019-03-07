@@ -43,7 +43,11 @@
       </dt>
       <!-- Display apartment_id start -->
       <dd>
-        <%= @apartment_photo.apartment_id %>
+        <% if @apartment_photo.apartment.present? %>
+          <a href="/apartments/<%= @apartment_photo.apartment_id %>">
+            <%= @apartment_photo.apartment.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display apartment_id end -->
 

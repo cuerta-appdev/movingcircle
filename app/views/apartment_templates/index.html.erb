@@ -86,7 +86,11 @@
 
         <!-- Display apartment.user_id start -->
         <td>
-          <%= apartment.user.email %>
+          <% if apartment.user.present? %>
+            <a href="/users/<%= apartment.user.id %>">
+              <%= apartment.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display apartment.user_id end -->
 
@@ -104,7 +108,11 @@
 
         <!-- Display apartment.building_id start -->
         <td>
-          <%= apartment.building.apartment_id %>
+          <% if apartment.building.present? %>
+            <a href="/buildings/<%= apartment.building.id %>">
+              <%= apartment.building.apartment_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display apartment.building_id end -->
 

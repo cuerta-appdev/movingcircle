@@ -52,7 +52,11 @@
       </dt>
       <!-- Display furniture_pack_id start -->
       <dd>
-        <%= @furniture_category.furniture_pack_id %>
+        <% if @furniture_category.furniture_pack.present? %>
+          <a href="/furniture_packs/<%= @furniture_category.furniture_pack_id %>">
+            <%= @furniture_category.furniture_pack.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display furniture_pack_id end -->
 

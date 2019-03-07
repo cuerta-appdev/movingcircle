@@ -34,7 +34,11 @@
       </dt>
       <!-- Display category_id start -->
       <dd>
-        <%= @furniture_category_picture.category_id %>
+        <% if @furniture_category_picture.category.present? %>
+          <a href="/furniture_categories/<%= @furniture_category_picture.category_id %>">
+            <%= @furniture_category_picture.category.items %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display category_id end -->
 

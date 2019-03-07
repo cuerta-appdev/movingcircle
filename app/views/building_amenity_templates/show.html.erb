@@ -34,7 +34,11 @@
       </dt>
       <!-- Display building_id start -->
       <dd>
-        <%= @building_amenity.building_id %>
+        <% if @building_amenity.building.present? %>
+          <a href="/buildings/<%= @building_amenity.building_id %>">
+            <%= @building_amenity.building.apartment_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display building_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display amenity_id start -->
       <dd>
-        <%= @building_amenity.amenity_id %>
+        <% if @building_amenity.amenity.present? %>
+          <a href="/amenities/<%= @building_amenity.amenity_id %>">
+            <%= @building_amenity.amenity.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display amenity_id end -->
 

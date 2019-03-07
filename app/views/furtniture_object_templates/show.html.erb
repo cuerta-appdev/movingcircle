@@ -52,7 +52,11 @@
       </dt>
       <!-- Display furniture_pack_id start -->
       <dd>
-        <%= @furtniture_object.furniture_pack_id %>
+        <% if @furtniture_object.furniture_pack.present? %>
+          <a href="/furniture_packs/<%= @furtniture_object.furniture_pack_id %>">
+            <%= @furtniture_object.furniture_pack.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display furniture_pack_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display category_id start -->
       <dd>
-        <%= @furtniture_object.category_id %>
+        <% if @furtniture_object.category.present? %>
+          <a href="/furniture_categories/<%= @furtniture_object.category_id %>">
+            <%= @furtniture_object.category.items %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display category_id end -->
 

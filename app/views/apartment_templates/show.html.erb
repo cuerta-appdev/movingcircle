@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @apartment.user_id %>
+        <% if @apartment.user.present? %>
+          <a href="/users/<%= @apartment.user_id %>">
+            <%= @apartment.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display building_id start -->
       <dd>
-        <%= @apartment.building_id %>
+        <% if @apartment.building.present? %>
+          <a href="/buildings/<%= @apartment.building_id %>">
+            <%= @apartment.building.apartment_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display building_id end -->
 

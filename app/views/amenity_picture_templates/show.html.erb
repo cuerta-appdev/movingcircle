@@ -52,7 +52,11 @@
       </dt>
       <!-- Display building_amenity_id start -->
       <dd>
-        <%= @amenity_picture.building_amenity_id %>
+        <% if @amenity_picture.building_amenity.present? %>
+          <a href="/building_amenities/<%= @amenity_picture.building_amenity_id %>">
+            <%= @amenity_picture.building_amenity.building_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display building_amenity_id end -->
 

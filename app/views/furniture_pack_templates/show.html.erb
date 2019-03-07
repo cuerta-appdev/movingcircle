@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @furniture_pack.user_id %>
+        <% if @furniture_pack.user.present? %>
+          <a href="/users/<%= @furniture_pack.user_id %>">
+            <%= @furniture_pack.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

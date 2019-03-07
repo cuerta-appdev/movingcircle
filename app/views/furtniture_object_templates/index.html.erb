@@ -82,13 +82,21 @@
 
         <!-- Display furtniture_object.furniture_pack_id start -->
         <td>
-          <%= furtniture_object.furniture_pack.description %>
+          <% if furtniture_object.furniture_pack.present? %>
+            <a href="/furniture_packs/<%= furtniture_object.furniture_pack.id %>">
+              <%= furtniture_object.furniture_pack.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display furtniture_object.furniture_pack_id end -->
 
         <!-- Display furtniture_object.category_id start -->
         <td>
-          <%= furtniture_object.category.items %>
+          <% if furtniture_object.category.present? %>
+            <a href="/furniture_categories/<%= furtniture_object.category.id %>">
+              <%= furtniture_object.category.items %>
+            </a>
+          <% end %>
         </td>
         <!-- Display furtniture_object.category_id end -->
 
