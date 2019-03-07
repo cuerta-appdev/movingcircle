@@ -1,6 +1,9 @@
 class FurniturePack < ApplicationRecord
   # Direct associations
 
+  has_many   :furniture_categories,
+             :dependent => :destroy
+
   has_many   :pack_bookmarks,
              :foreign_key => "pack_id",
              :dependent => :destroy
