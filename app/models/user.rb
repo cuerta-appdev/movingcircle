@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :apartments,
+             :dependent => :destroy
+
   has_many   :furniture_packs,
              :dependent => :destroy
 
