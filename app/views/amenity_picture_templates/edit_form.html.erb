@@ -40,7 +40,7 @@
     </label>
 
     <!-- Input for building_amenity_id start -->
-    <input type="text" id="building_amenity_id" name="building_amenity_id" class="form-control" value="<%= @amenity_picture.building_amenity_id %>">
+    <%= select_tag(:building_amenity_id, options_from_collection_for_select(BuildingAmenity.all, :id, :building_id, @amenity_picture.building_amenity_id), :class => "form-control") %>
     <!-- Input for building_amenity_id end -->
   </div>
   <!-- Label and input for building_amenity_id end -->
