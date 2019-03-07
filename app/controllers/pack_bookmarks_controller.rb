@@ -55,6 +55,22 @@ class PackBookmarksController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @pack_bookmark = PackBookmark.find(params.fetch("id_to_remove"))
+
+    @pack_bookmark.destroy
+
+    redirect_to("/users/#{@pack_bookmark.user_id}", notice: "PackBookmark deleted successfully.")
+  end
+
+  def destroy_row_from_pack
+    @pack_bookmark = PackBookmark.find(params.fetch("id_to_remove"))
+
+    @pack_bookmark.destroy
+
+    redirect_to("/furniture_packs/#{@pack_bookmark.pack_id}", notice: "PackBookmark deleted successfully.")
+  end
+
   def destroy_row
     @pack_bookmark = PackBookmark.find(params.fetch("id_to_remove"))
 

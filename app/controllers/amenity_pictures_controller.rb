@@ -55,6 +55,14 @@ class AmenityPicturesController < ApplicationController
     end
   end
 
+  def destroy_row_from_building_amenity
+    @amenity_picture = AmenityPicture.find(params.fetch("id_to_remove"))
+
+    @amenity_picture.destroy
+
+    redirect_to("/building_amenities/#{@amenity_picture.building_amenity_id}", notice: "AmenityPicture deleted successfully.")
+  end
+
   def destroy_row
     @amenity_picture = AmenityPicture.find(params.fetch("id_to_remove"))
 

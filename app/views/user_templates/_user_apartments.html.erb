@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Apartments
+
+    <a data-toggle="collapse" href="#user_apartments_new_form">
+      Add apartment
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.apartments.each do |apartment| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/apartments/<%= apartment.id %>">
+          <%= apartment.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

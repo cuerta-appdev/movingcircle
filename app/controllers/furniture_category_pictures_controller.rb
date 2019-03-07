@@ -53,6 +53,14 @@ class FurnitureCategoryPicturesController < ApplicationController
     end
   end
 
+  def destroy_row_from_category
+    @furniture_category_picture = FurnitureCategoryPicture.find(params.fetch("id_to_remove"))
+
+    @furniture_category_picture.destroy
+
+    redirect_to("/furniture_categories/#{@furniture_category_picture.category_id}", notice: "FurnitureCategoryPicture deleted successfully.")
+  end
+
   def destroy_row
     @furniture_category_picture = FurnitureCategoryPicture.find(params.fetch("id_to_remove"))
 

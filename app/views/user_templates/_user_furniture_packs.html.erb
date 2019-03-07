@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Furniture Packs
+
+    <a data-toggle="collapse" href="#user_furniture_packs_new_form">
+      Add furniture pack
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.furniture_packs.each do |furniture_pack| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/furniture_packs/<%= furniture_pack.id %>">
+          <%= furniture_pack.description %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

@@ -59,6 +59,22 @@ class FurtnitureObjectsController < ApplicationController
     end
   end
 
+  def destroy_row_from_furniture_pack
+    @furtniture_object = FurtnitureObject.find(params.fetch("id_to_remove"))
+
+    @furtniture_object.destroy
+
+    redirect_to("/furniture_packs/#{@furtniture_object.furniture_pack_id}", notice: "FurtnitureObject deleted successfully.")
+  end
+
+  def destroy_row_from_category
+    @furtniture_object = FurtnitureObject.find(params.fetch("id_to_remove"))
+
+    @furtniture_object.destroy
+
+    redirect_to("/furniture_categories/#{@furtniture_object.category_id}", notice: "FurtnitureObject deleted successfully.")
+  end
+
   def destroy_row
     @furtniture_object = FurtnitureObject.find(params.fetch("id_to_remove"))
 

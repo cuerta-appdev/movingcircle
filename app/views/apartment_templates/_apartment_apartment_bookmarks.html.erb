@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Apartment Bookmarks
+
+    <a data-toggle="collapse" href="#apartment_apartment_bookmarks_new_form">
+      Add apartment bookmark
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @apartment.apartment_bookmarks.each do |apartment_bookmark| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/apartment_bookmarks/<%= apartment_bookmark.id %>">
+          <%= apartment_bookmark.user_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_apartment_bookmark_from_apartment/<%= apartment_bookmark.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="apartment_apartment_bookmarks_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

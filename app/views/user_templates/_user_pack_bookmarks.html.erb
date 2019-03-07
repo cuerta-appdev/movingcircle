@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Pack Bookmarks
+
+    <a data-toggle="collapse" href="#user_pack_bookmarks_new_form">
+      Add pack bookmark
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.pack_bookmarks.each do |pack_bookmark| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/pack_bookmarks/<%= pack_bookmark.id %>">
+          <%= pack_bookmark.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

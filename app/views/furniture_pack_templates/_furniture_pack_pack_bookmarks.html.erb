@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Pack Bookmarks
+
+    <a data-toggle="collapse" href="#furniture_pack_pack_bookmarks_new_form">
+      Add pack bookmark
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @furniture_pack.pack_bookmarks.each do |pack_bookmark| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/pack_bookmarks/<%= pack_bookmark.id %>">
+          <%= pack_bookmark.user_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_pack_bookmark_from_pack/<%= pack_bookmark.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="furniture_pack_pack_bookmarks_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

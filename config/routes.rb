@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_furniture_category_picture/:id_to_remove", { :controller => "furniture_category_pictures", :action => "destroy_row" })
+  get("/delete_furniture_category_picture_from_category/:id_to_remove", { :controller => "furniture_category_pictures", :action => "destroy_row_from_category" })
 
   #------------------------------
 
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_furniture_category/:id_to_remove", { :controller => "furniture_categories", :action => "destroy_row" })
+  get("/delete_furniture_category_from_furniture_pack/:id_to_remove", { :controller => "furniture_categories", :action => "destroy_row_from_furniture_pack" })
 
   #------------------------------
 
@@ -56,6 +58,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_building_bookmark/:id_to_remove", { :controller => "building_bookmarks", :action => "destroy_row" })
+  get("/delete_building_bookmark_from_building/:id_to_remove", { :controller => "building_bookmarks", :action => "destroy_row_from_building" })
+  get("/delete_building_bookmark_from_user/:id_to_remove", { :controller => "building_bookmarks", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -75,6 +79,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_building_amenity/:id_to_remove", { :controller => "building_amenities", :action => "destroy_row" })
+  get("/delete_building_amenity_from_building/:id_to_remove", { :controller => "building_amenities", :action => "destroy_row_from_building" })
+  get("/delete_building_amenity_from_amenity/:id_to_remove", { :controller => "building_amenities", :action => "destroy_row_from_amenity" })
 
   #------------------------------
 
@@ -113,6 +119,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_amenity_picture/:id_to_remove", { :controller => "amenity_pictures", :action => "destroy_row" })
+  get("/delete_amenity_picture_from_building_amenity/:id_to_remove", { :controller => "amenity_pictures", :action => "destroy_row_from_building_amenity" })
 
   #------------------------------
 
@@ -151,6 +158,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_apartment_bookmark/:id_to_remove", { :controller => "apartment_bookmarks", :action => "destroy_row" })
+  get("/delete_apartment_bookmark_from_apartment/:id_to_remove", { :controller => "apartment_bookmarks", :action => "destroy_row_from_apartment" })
+  get("/delete_apartment_bookmark_from_user/:id_to_remove", { :controller => "apartment_bookmarks", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -170,6 +179,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_pack_bookmark/:id_to_remove", { :controller => "pack_bookmarks", :action => "destroy_row" })
+  get("/delete_pack_bookmark_from_pack/:id_to_remove", { :controller => "pack_bookmarks", :action => "destroy_row_from_pack" })
+  get("/delete_pack_bookmark_from_user/:id_to_remove", { :controller => "pack_bookmarks", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -189,6 +200,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_furniture_pack/:id_to_remove", { :controller => "furniture_packs", :action => "destroy_row" })
+  get("/delete_furniture_pack_from_user/:id_to_remove", { :controller => "furniture_packs", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -208,6 +220,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_apartment_photo/:id_to_remove", { :controller => "apartment_photos", :action => "destroy_row" })
+  get("/delete_apartment_photo_from_apartment/:id_to_remove", { :controller => "apartment_photos", :action => "destroy_row_from_apartment" })
 
   #------------------------------
 
@@ -227,6 +240,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_furniture_object_picture/:id_to_remove", { :controller => "furniture_object_pictures", :action => "destroy_row" })
+  get("/delete_furniture_object_picture_from_furniture_object/:id_to_remove", { :controller => "furniture_object_pictures", :action => "destroy_row_from_furniture_object" })
 
   #------------------------------
 
@@ -246,6 +260,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_furtniture_object/:id_to_remove", { :controller => "furtniture_objects", :action => "destroy_row" })
+  get("/delete_furtniture_object_from_category/:id_to_remove", { :controller => "furtniture_objects", :action => "destroy_row_from_category" })
+  get("/delete_furtniture_object_from_furniture_pack/:id_to_remove", { :controller => "furtniture_objects", :action => "destroy_row_from_furniture_pack" })
 
   #------------------------------
 
@@ -265,6 +281,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_apartment/:id_to_remove", { :controller => "apartments", :action => "destroy_row" })
+  get("/delete_apartment_from_building/:id_to_remove", { :controller => "apartments", :action => "destroy_row_from_building" })
+  get("/delete_apartment_from_user/:id_to_remove", { :controller => "apartments", :action => "destroy_row_from_user" })
 
   #------------------------------
 

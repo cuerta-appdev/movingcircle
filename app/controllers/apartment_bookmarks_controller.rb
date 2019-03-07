@@ -55,6 +55,22 @@ class ApartmentBookmarksController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @apartment_bookmark = ApartmentBookmark.find(params.fetch("id_to_remove"))
+
+    @apartment_bookmark.destroy
+
+    redirect_to("/users/#{@apartment_bookmark.user_id}", notice: "ApartmentBookmark deleted successfully.")
+  end
+
+  def destroy_row_from_apartment
+    @apartment_bookmark = ApartmentBookmark.find(params.fetch("id_to_remove"))
+
+    @apartment_bookmark.destroy
+
+    redirect_to("/apartments/#{@apartment_bookmark.apartment_id}", notice: "ApartmentBookmark deleted successfully.")
+  end
+
   def destroy_row
     @apartment_bookmark = ApartmentBookmark.find(params.fetch("id_to_remove"))
 

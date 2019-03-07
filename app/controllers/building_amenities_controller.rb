@@ -53,6 +53,22 @@ class BuildingAmenitiesController < ApplicationController
     end
   end
 
+  def destroy_row_from_amenity
+    @building_amenity = BuildingAmenity.find(params.fetch("id_to_remove"))
+
+    @building_amenity.destroy
+
+    redirect_to("/amenities/#{@building_amenity.amenity_id}", notice: "BuildingAmenity deleted successfully.")
+  end
+
+  def destroy_row_from_building
+    @building_amenity = BuildingAmenity.find(params.fetch("id_to_remove"))
+
+    @building_amenity.destroy
+
+    redirect_to("/buildings/#{@building_amenity.building_id}", notice: "BuildingAmenity deleted successfully.")
+  end
+
   def destroy_row
     @building_amenity = BuildingAmenity.find(params.fetch("id_to_remove"))
 

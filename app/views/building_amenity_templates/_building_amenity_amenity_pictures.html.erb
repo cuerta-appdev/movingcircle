@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Amenity Pictures
+
+    <a data-toggle="collapse" href="#building_amenity_amenity_pictures_new_form">
+      Add amenity picture
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @building_amenity.amenity_pictures.each do |amenity_picture| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/amenity_pictures/<%= amenity_picture.id %>">
+          <%= amenity_picture.created_at %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_amenity_picture_from_building_amenity/<%= amenity_picture.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="building_amenity_amenity_pictures_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

@@ -67,6 +67,22 @@ class ApartmentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @apartment = Apartment.find(params.fetch("id_to_remove"))
+
+    @apartment.destroy
+
+    redirect_to("/users/#{@apartment.user_id}", notice: "Apartment deleted successfully.")
+  end
+
+  def destroy_row_from_building
+    @apartment = Apartment.find(params.fetch("id_to_remove"))
+
+    @apartment.destroy
+
+    redirect_to("/buildings/#{@apartment.building_id}", notice: "Apartment deleted successfully.")
+  end
+
   def destroy_row
     @apartment = Apartment.find(params.fetch("id_to_remove"))
 

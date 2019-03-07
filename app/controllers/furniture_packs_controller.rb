@@ -67,6 +67,14 @@ class FurniturePacksController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @furniture_pack = FurniturePack.find(params.fetch("id_to_remove"))
+
+    @furniture_pack.destroy
+
+    redirect_to("/users/#{@furniture_pack.user_id}", notice: "FurniturePack deleted successfully.")
+  end
+
   def destroy_row
     @furniture_pack = FurniturePack.find(params.fetch("id_to_remove"))
 
