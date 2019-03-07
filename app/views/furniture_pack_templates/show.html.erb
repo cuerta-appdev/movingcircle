@@ -13,17 +13,21 @@
 
       <!-- Edit link furniture_pack start -->
       <div class="col">
-        <a href="/furniture_packs/<%= @furniture_pack.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit furniture pack
-        </a>
+        <% if current_user == @furniture_pack.user %>
+          <a href="/furniture_packs/<%= @furniture_pack.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit furniture_pack
+          </a>
+        <% end %>
       </div>
       <!-- Edit link furniture_pack end -->
 
       <!-- Delete link furniture_pack start -->
       <div class="col">
-        <a href="/delete_furniture_pack/<%= @furniture_pack.id %>" class="btn btn-block btn-outline-secondary">
-          Delete furniture pack
-        </a>
+        <% if current_user == @furniture_pack.user %>
+          <a href="/delete_furniture_pack/<%= @furniture_pack.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete furniture_pack
+          </a>
+        <% end %>
       </div>
       <!-- Delete link furniture_pack end -->
     </div>
