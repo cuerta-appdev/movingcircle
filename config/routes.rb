@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Building amenity resource:
+
+  # CREATE
+  get("/building_amenities/new", { :controller => "building_amenities", :action => "new_form" })
+  post("/create_building_amenity", { :controller => "building_amenities", :action => "create_row" })
+
+  # READ
+  get("/building_amenities", { :controller => "building_amenities", :action => "index" })
+  get("/building_amenities/:id_to_display", { :controller => "building_amenities", :action => "show" })
+
+  # UPDATE
+  get("/building_amenities/:prefill_with_id/edit", { :controller => "building_amenities", :action => "edit_form" })
+  post("/update_building_amenity/:id_to_modify", { :controller => "building_amenities", :action => "update_row" })
+
+  # DELETE
+  get("/delete_building_amenity/:id_to_remove", { :controller => "building_amenities", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Building resource:
 
   # CREATE

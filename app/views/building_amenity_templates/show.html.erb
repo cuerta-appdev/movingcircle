@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Building amenity #<%= @building_amenity.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/building_amenities" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link building_amenity start -->
+      <div class="col">
+        <a href="/building_amenities/<%= @building_amenity.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit building amenity
+        </a>
+      </div>
+      <!-- Edit link building_amenity end -->
+
+      <!-- Delete link building_amenity start -->
+      <div class="col">
+        <a href="/delete_building_amenity/<%= @building_amenity.id %>" class="btn btn-block btn-outline-secondary">
+          Delete building amenity
+        </a>
+      </div>
+      <!-- Delete link building_amenity end -->
+    </div>
+
+    <dl>
+      <dt>
+        Building
+      </dt>
+      <!-- Display building_id start -->
+      <dd>
+        <%= @building_amenity.building_id %>
+      </dd>
+      <!-- Display building_id end -->
+
+      <dt>
+        Amenity
+      </dt>
+      <!-- Display amenity_id start -->
+      <dd>
+        <%= @building_amenity.amenity_id %>
+      </dd>
+      <!-- Display amenity_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@building_amenity.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@building_amenity.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

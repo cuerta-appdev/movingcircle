@@ -1,0 +1,44 @@
+<h1>
+  Edit building amenity #<%= @building_amenity.id %>
+</h1>
+
+<hr>
+
+<!-- Form building_amenity start -->
+<form action="/update_building_amenity/<%= @building_amenity.id %>" method="post">
+<!-- Form building_amenity end -->
+
+  <!-- Label and input for building_id start -->
+  <div class="form-group">
+    <label for="building_id">
+      Building
+    </label>
+
+    <!-- Input for building_id start -->
+    <input type="text" id="building_id" name="building_id" class="form-control" value="<%= @building_amenity.building_id %>">
+    <!-- Input for building_id end -->
+  </div>
+  <!-- Label and input for building_id end -->
+
+  <!-- Label and input for amenity_id start -->
+  <div class="form-group">
+    <label for="amenity_id">
+      Amenity
+    </label>
+
+    <!-- Input for amenity_id start -->
+    <input type="text" id="amenity_id" name="amenity_id" class="form-control" value="<%= @building_amenity.amenity_id %>">
+    <!-- Input for amenity_id end -->
+  </div>
+  <!-- Label and input for amenity_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update building amenity
+  </button>
+</form>
+
+<hr>
+
+<a href="/building_amenities">
+  Go back
+</a>
