@@ -1,0 +1,122 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All furniture categories
+    </h1>
+
+    <a href="/furniture_categories/new" class="btn btn-block btn-outline-secondary">
+      Add a new furniture category
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Items
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Furniture pack
+        </th>
+
+        <th>
+          Number of items
+        </th>
+
+        <th>
+          Price
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @furniture_categories.each do |furniture_category| %>
+      <tr>
+        <!-- Display furniture_category.id start -->
+        <td>
+          <%= furniture_category.id %>
+        </td>
+        <!-- Display furniture_category.id end -->
+
+        <!-- Display furniture_category.items start -->
+        <td>
+          <%= furniture_category.items %>
+        </td>
+        <!-- Display furniture_category.items end -->
+
+        <!-- Display furniture_category.name start -->
+        <td>
+          <%= furniture_category.name %>
+        </td>
+        <!-- Display furniture_category.name end -->
+
+        <!-- Display furniture_category.furniture_pack_id start -->
+        <td>
+          <%= furniture_category.furniture_pack_id %>
+        </td>
+        <!-- Display furniture_category.furniture_pack_id end -->
+
+        <!-- Display furniture_category.number_of_items start -->
+        <td>
+          <%= furniture_category.number_of_items %>
+        </td>
+        <!-- Display furniture_category.number_of_items end -->
+
+        <!-- Display furniture_category.price start -->
+        <td>
+          <%= furniture_category.price %>
+        </td>
+        <!-- Display furniture_category.price end -->
+
+        <!-- Display furniture_category.created_at start -->
+        <td>
+          <%= time_ago_in_words(furniture_category.created_at) %> ago
+        </td>
+        <!-- Display furniture_category.created_at end -->
+
+        <!-- Display furniture_category.updated_at start -->
+        <td>
+          <%= time_ago_in_words(furniture_category.updated_at) %> ago
+        </td>
+        <!-- Display furniture_category.updated_at end -->
+
+        <td>
+          <a href="/furniture_categories/<%= furniture_category.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<h1>
+  Add a new furniture category
+</h1>
+
+
+<hr>
+
+<!-- Form furniture_category start -->
+<form action="/create_furniture_category" method="post">
+<!-- Form furniture_category end -->
+
+  <!-- Label and input for items start -->
+  <div class="form-group">
+    <label for="items">
+      Items
+    </label>
+
+    <!-- Input for items start -->
+    <textarea id="items" name="items" class="form-control" rows="3"></textarea>
+    <!-- Input for items end -->
+  </div>
+  <!-- Label and input for items end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for furniture_pack_id start -->
+  <div class="form-group">
+    <label for="furniture_pack_id">
+      Furniture pack
+    </label>
+
+    <!-- Input for furniture_pack_id start -->
+    <input type="text" id="furniture_pack_id" name="furniture_pack_id" class="form-control">
+    <!-- Input for furniture_pack_id end -->
+  </div>
+  <!-- Label and input for furniture_pack_id end -->
+
+  <!-- Label and input for number_of_items start -->
+  <div class="form-group">
+    <label for="number_of_items">
+      Number of items
+    </label>
+
+    <!-- Input for number_of_items start -->
+    <input type="text" id="number_of_items" name="number_of_items" class="form-control">
+    <!-- Input for number_of_items end -->
+  </div>
+  <!-- Label and input for number_of_items end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create furniture category
+  </button>
+</form>
+
+<hr>
+
+<a href="/furniture_categories">
+  Go back
+</a>

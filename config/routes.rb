@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Furniture category resource:
+
+  # CREATE
+  get("/furniture_categories/new", { :controller => "furniture_categories", :action => "new_form" })
+  post("/create_furniture_category", { :controller => "furniture_categories", :action => "create_row" })
+
+  # READ
+  get("/furniture_categories", { :controller => "furniture_categories", :action => "index" })
+  get("/furniture_categories/:id_to_display", { :controller => "furniture_categories", :action => "show" })
+
+  # UPDATE
+  get("/furniture_categories/:prefill_with_id/edit", { :controller => "furniture_categories", :action => "edit_form" })
+  post("/update_furniture_category/:id_to_modify", { :controller => "furniture_categories", :action => "update_row" })
+
+  # DELETE
+  get("/delete_furniture_category/:id_to_remove", { :controller => "furniture_categories", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Building bookmark resource:
 
   # CREATE
