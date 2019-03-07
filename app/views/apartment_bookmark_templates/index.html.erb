@@ -1,0 +1,102 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All apartment bookmarks
+    </h1>
+
+    <a href="/apartment_bookmarks/new" class="btn btn-block btn-outline-secondary">
+      Add a new apartment bookmark
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Apartment
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @apartment_bookmarks.each do |apartment_bookmark| %>
+      <tr>
+        <!-- Display apartment_bookmark.id start -->
+        <td>
+          <%= apartment_bookmark.id %>
+        </td>
+        <!-- Display apartment_bookmark.id end -->
+
+        <!-- Display apartment_bookmark.user_id start -->
+        <td>
+          <%= apartment_bookmark.user_id %>
+        </td>
+        <!-- Display apartment_bookmark.user_id end -->
+
+        <!-- Display apartment_bookmark.apartment_id start -->
+        <td>
+          <%= apartment_bookmark.apartment_id %>
+        </td>
+        <!-- Display apartment_bookmark.apartment_id end -->
+
+        <!-- Display apartment_bookmark.name start -->
+        <td>
+          <%= apartment_bookmark.name %>
+        </td>
+        <!-- Display apartment_bookmark.name end -->
+
+        <!-- Display apartment_bookmark.created_at start -->
+        <td>
+          <%= time_ago_in_words(apartment_bookmark.created_at) %> ago
+        </td>
+        <!-- Display apartment_bookmark.created_at end -->
+
+        <!-- Display apartment_bookmark.updated_at start -->
+        <td>
+          <%= time_ago_in_words(apartment_bookmark.updated_at) %> ago
+        </td>
+        <!-- Display apartment_bookmark.updated_at end -->
+
+        <td>
+          <a href="/apartment_bookmarks/<%= apartment_bookmark.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
