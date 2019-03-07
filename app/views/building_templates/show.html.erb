@@ -43,7 +43,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @building.address %>
+        <div>
+          <%= render partial: "building_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 
