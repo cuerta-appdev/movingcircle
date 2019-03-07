@@ -1,4 +1,6 @@
 ActiveAdmin.register FurniturePack do
+
+ permit_params :description, :user_id, :price, :number_of_items, :storage_conditions, :apartment_sq_footage, :apartment_number_of_bedrooms, :apartment_number_of_bathrooms, :apartment_building_name
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
