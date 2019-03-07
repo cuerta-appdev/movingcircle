@@ -1,6 +1,9 @@
 class Building < ApplicationRecord
   # Direct associations
 
+  has_many   :building_bookmarks,
+             :dependent => :destroy
+
   has_many   :apartments,
              :dependent => :destroy
 

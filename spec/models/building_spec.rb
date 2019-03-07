@@ -4,6 +4,8 @@ RSpec.describe Building, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:building_bookmarks) }
+
     it { should have_many(:apartments) }
 
     it { should have_many(:building_amenities) }
