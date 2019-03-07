@@ -4,6 +4,8 @@ RSpec.describe BuildingAmenity, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:amenity_pictures) }
+
     it { should belong_to(:building) }
 
     it { should belong_to(:amenity) }
