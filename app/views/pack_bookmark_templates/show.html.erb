@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Pack bookmark #<%= @pack_bookmark.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/pack_bookmarks" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link pack_bookmark start -->
+      <div class="col">
+        <a href="/pack_bookmarks/<%= @pack_bookmark.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit pack bookmark
+        </a>
+      </div>
+      <!-- Edit link pack_bookmark end -->
+
+      <!-- Delete link pack_bookmark start -->
+      <div class="col">
+        <a href="/delete_pack_bookmark/<%= @pack_bookmark.id %>" class="btn btn-block btn-outline-secondary">
+          Delete pack bookmark
+        </a>
+      </div>
+      <!-- Delete link pack_bookmark end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @pack_bookmark.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Pack
+      </dt>
+      <!-- Display pack_id start -->
+      <dd>
+        <%= @pack_bookmark.pack_id %>
+      </dd>
+      <!-- Display pack_id end -->
+
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @pack_bookmark.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@pack_bookmark.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@pack_bookmark.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

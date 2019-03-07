@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Pack bookmark resource:
+
+  # CREATE
+  get("/pack_bookmarks/new", { :controller => "pack_bookmarks", :action => "new_form" })
+  post("/create_pack_bookmark", { :controller => "pack_bookmarks", :action => "create_row" })
+
+  # READ
+  get("/pack_bookmarks", { :controller => "pack_bookmarks", :action => "index" })
+  get("/pack_bookmarks/:id_to_display", { :controller => "pack_bookmarks", :action => "show" })
+
+  # UPDATE
+  get("/pack_bookmarks/:prefill_with_id/edit", { :controller => "pack_bookmarks", :action => "edit_form" })
+  post("/update_pack_bookmark/:id_to_modify", { :controller => "pack_bookmarks", :action => "update_row" })
+
+  # DELETE
+  get("/delete_pack_bookmark/:id_to_remove", { :controller => "pack_bookmarks", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Furniture pack resource:
 
   # CREATE
