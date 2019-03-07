@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for building_id start -->
-    <input type="text" id="building_id" name="building_id" class="form-control">
+    <%= select_tag(:building_id, options_from_collection_for_select(Building.all, :id, :apartment_id, @building_bookmark.building_id), :class => "form-control") %>
     <!-- Input for building_id end -->
   </div>
   <!-- Label and input for building_id end -->
