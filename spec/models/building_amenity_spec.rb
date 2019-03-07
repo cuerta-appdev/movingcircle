@@ -4,6 +4,8 @@ RSpec.describe BuildingAmenity, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:amenity) }
+
     end
 
     describe "InDirect Associations" do
