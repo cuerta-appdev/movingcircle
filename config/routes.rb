@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Building bookmark resource:
+
+  # CREATE
+  get("/building_bookmarks/new", { :controller => "building_bookmarks", :action => "new_form" })
+  post("/create_building_bookmark", { :controller => "building_bookmarks", :action => "create_row" })
+
+  # READ
+  get("/building_bookmarks", { :controller => "building_bookmarks", :action => "index" })
+  get("/building_bookmarks/:id_to_display", { :controller => "building_bookmarks", :action => "show" })
+
+  # UPDATE
+  get("/building_bookmarks/:prefill_with_id/edit", { :controller => "building_bookmarks", :action => "edit_form" })
+  post("/update_building_bookmark/:id_to_modify", { :controller => "building_bookmarks", :action => "update_row" })
+
+  # DELETE
+  get("/delete_building_bookmark/:id_to_remove", { :controller => "building_bookmarks", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Building amenity resource:
 
   # CREATE

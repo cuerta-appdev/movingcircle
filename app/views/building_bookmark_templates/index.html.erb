@@ -1,0 +1,102 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All building bookmarks
+    </h1>
+
+    <a href="/building_bookmarks/new" class="btn btn-block btn-outline-secondary">
+      Add a new building bookmark
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Building
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @building_bookmarks.each do |building_bookmark| %>
+      <tr>
+        <!-- Display building_bookmark.id start -->
+        <td>
+          <%= building_bookmark.id %>
+        </td>
+        <!-- Display building_bookmark.id end -->
+
+        <!-- Display building_bookmark.building_id start -->
+        <td>
+          <%= building_bookmark.building_id %>
+        </td>
+        <!-- Display building_bookmark.building_id end -->
+
+        <!-- Display building_bookmark.user_id start -->
+        <td>
+          <%= building_bookmark.user_id %>
+        </td>
+        <!-- Display building_bookmark.user_id end -->
+
+        <!-- Display building_bookmark.name start -->
+        <td>
+          <%= building_bookmark.name %>
+        </td>
+        <!-- Display building_bookmark.name end -->
+
+        <!-- Display building_bookmark.created_at start -->
+        <td>
+          <%= time_ago_in_words(building_bookmark.created_at) %> ago
+        </td>
+        <!-- Display building_bookmark.created_at end -->
+
+        <!-- Display building_bookmark.updated_at start -->
+        <td>
+          <%= time_ago_in_words(building_bookmark.updated_at) %> ago
+        </td>
+        <!-- Display building_bookmark.updated_at end -->
+
+        <td>
+          <a href="/building_bookmarks/<%= building_bookmark.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
