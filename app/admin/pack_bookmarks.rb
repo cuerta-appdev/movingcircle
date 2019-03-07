@@ -1,4 +1,6 @@
 ActiveAdmin.register PackBookmark do
+
+ permit_params :user_id, :pack_id, :name
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
