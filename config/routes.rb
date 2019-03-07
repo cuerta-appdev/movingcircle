@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Apartment photo resource:
+
+  # CREATE
+  get("/apartment_photos/new", { :controller => "apartment_photos", :action => "new_form" })
+  post("/create_apartment_photo", { :controller => "apartment_photos", :action => "create_row" })
+
+  # READ
+  get("/apartment_photos", { :controller => "apartment_photos", :action => "index" })
+  get("/apartment_photos/:id_to_display", { :controller => "apartment_photos", :action => "show" })
+
+  # UPDATE
+  get("/apartment_photos/:prefill_with_id/edit", { :controller => "apartment_photos", :action => "edit_form" })
+  post("/update_apartment_photo/:id_to_modify", { :controller => "apartment_photos", :action => "update_row" })
+
+  # DELETE
+  get("/delete_apartment_photo/:id_to_remove", { :controller => "apartment_photos", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Furniture object picture resource:
 
   # CREATE

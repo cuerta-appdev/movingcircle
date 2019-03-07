@@ -1,0 +1,56 @@
+<h1>
+  Edit apartment photo #<%= @apartment_photo.id %>
+</h1>
+
+<hr>
+
+<!-- Form apartment_photo start -->
+<form action="/update_apartment_photo/<%= @apartment_photo.id %>" method="post">
+<!-- Form apartment_photo end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @apartment_photo.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for apartment_id start -->
+  <div class="form-group">
+    <label for="apartment_id">
+      Apartment
+    </label>
+
+    <!-- Input for apartment_id start -->
+    <input type="text" id="apartment_id" name="apartment_id" class="form-control" value="<%= @apartment_photo.apartment_id %>">
+    <!-- Input for apartment_id end -->
+  </div>
+  <!-- Label and input for apartment_id end -->
+
+  <!-- Label and input for photo start -->
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <!-- Input for photo start -->
+    <input type="text" id="photo" name="photo" class="form-control" value="<%= @apartment_photo.photo %>">
+    <!-- Input for photo end -->
+  </div>
+  <!-- Label and input for photo end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update apartment photo
+  </button>
+</form>
+
+<hr>
+
+<a href="/apartment_photos">
+  Go back
+</a>
