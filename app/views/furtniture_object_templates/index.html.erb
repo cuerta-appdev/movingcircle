@@ -1,0 +1,122 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All furtniture objects
+    </h1>
+
+    <a href="/furtniture_objects/new" class="btn btn-block btn-outline-secondary">
+      Add a new furtniture object
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Price
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Furniture pack
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @furtniture_objects.each do |furtniture_object| %>
+      <tr>
+        <!-- Display furtniture_object.id start -->
+        <td>
+          <%= furtniture_object.id %>
+        </td>
+        <!-- Display furtniture_object.id end -->
+
+        <!-- Display furtniture_object.price start -->
+        <td>
+          <%= furtniture_object.price %>
+        </td>
+        <!-- Display furtniture_object.price end -->
+
+        <!-- Display furtniture_object.description start -->
+        <td>
+          <%= furtniture_object.description %>
+        </td>
+        <!-- Display furtniture_object.description end -->
+
+        <!-- Display furtniture_object.furniture_pack_id start -->
+        <td>
+          <%= furtniture_object.furniture_pack_id %>
+        </td>
+        <!-- Display furtniture_object.furniture_pack_id end -->
+
+        <!-- Display furtniture_object.category_id start -->
+        <td>
+          <%= furtniture_object.category_id %>
+        </td>
+        <!-- Display furtniture_object.category_id end -->
+
+        <!-- Display furtniture_object.name start -->
+        <td>
+          <%= furtniture_object.name %>
+        </td>
+        <!-- Display furtniture_object.name end -->
+
+        <!-- Display furtniture_object.created_at start -->
+        <td>
+          <%= time_ago_in_words(furtniture_object.created_at) %> ago
+        </td>
+        <!-- Display furtniture_object.created_at end -->
+
+        <!-- Display furtniture_object.updated_at start -->
+        <td>
+          <%= time_ago_in_words(furtniture_object.updated_at) %> ago
+        </td>
+        <!-- Display furtniture_object.updated_at end -->
+
+        <td>
+          <a href="/furtniture_objects/<%= furtniture_object.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

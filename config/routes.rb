@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Furtniture object resource:
+
+  # CREATE
+  get("/furtniture_objects/new", { :controller => "furtniture_objects", :action => "new_form" })
+  post("/create_furtniture_object", { :controller => "furtniture_objects", :action => "create_row" })
+
+  # READ
+  get("/furtniture_objects", { :controller => "furtniture_objects", :action => "index" })
+  get("/furtniture_objects/:id_to_display", { :controller => "furtniture_objects", :action => "show" })
+
+  # UPDATE
+  get("/furtniture_objects/:prefill_with_id/edit", { :controller => "furtniture_objects", :action => "edit_form" })
+  post("/update_furtniture_object/:id_to_modify", { :controller => "furtniture_objects", :action => "update_row" })
+
+  # DELETE
+  get("/delete_furtniture_object/:id_to_remove", { :controller => "furtniture_objects", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Apartment resource:
 
   # CREATE
