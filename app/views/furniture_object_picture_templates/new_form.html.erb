@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for furniture_object_id start -->
-    <input type="text" id="furniture_object_id" name="furniture_object_id" class="form-control">
+    <%= select_tag(:furniture_object_id, options_from_collection_for_select(FurtnitureObject.all, :id, :price, @furniture_object_picture.furniture_object_id), :class => "form-control") %>
     <!-- Input for furniture_object_id end -->
   </div>
   <!-- Label and input for furniture_object_id end -->
