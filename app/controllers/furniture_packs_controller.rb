@@ -52,7 +52,7 @@ class FurniturePacksController < ApplicationController
     @furniture_pack = FurniturePack.find(params.fetch("id_to_modify"))
 
     @furniture_pack.description = params.fetch("description")
-    @furniture_pack.user_id = params.fetch("user_id")
+    
     @furniture_pack.price = params.fetch("price")
     @furniture_pack.number_of_items = params.fetch("number_of_items")
     @furniture_pack.storage_conditions = params.fetch("storage_conditions")
