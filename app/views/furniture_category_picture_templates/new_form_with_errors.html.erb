@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @furniture_category_picture.present? %>
+  <% if @furniture_category_picture.errors.any? %>
+    <% @furniture_category_picture.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new furniture category picture
+</h1>
+
+
+<hr>
+
+<!-- Form furniture_category_picture start -->
+<form action="/create_furniture_category_picture" method="post">
+<!-- Form furniture_category_picture end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <!-- Input for category_id start -->
+    <input type="text" id="category_id" name="category_id" class="form-control" value="<%= @furniture_category_picture.category_id %>">
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <!-- Label and input for picture start -->
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <!-- Input for picture start -->
+    <input type="text" id="picture" name="picture" class="form-control" value="<%= @furniture_category_picture.picture %>">
+    <!-- Input for picture end -->
+  </div>
+  <!-- Label and input for picture end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create furniture category picture
+  </button>
+</form>
+
+<hr>
+
+<a href="/furniture_category_pictures">
+  Go back
+</a>

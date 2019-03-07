@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All furniture category pictures
+    </h1>
+
+    <a href="/furniture_category_pictures/new" class="btn btn-block btn-outline-secondary">
+      Add a new furniture category picture
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          Picture
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @furniture_category_pictures.each do |furniture_category_picture| %>
+      <tr>
+        <!-- Display furniture_category_picture.id start -->
+        <td>
+          <%= furniture_category_picture.id %>
+        </td>
+        <!-- Display furniture_category_picture.id end -->
+
+        <!-- Display furniture_category_picture.category_id start -->
+        <td>
+          <%= furniture_category_picture.category_id %>
+        </td>
+        <!-- Display furniture_category_picture.category_id end -->
+
+        <!-- Display furniture_category_picture.picture start -->
+        <td>
+          <%= furniture_category_picture.picture %>
+        </td>
+        <!-- Display furniture_category_picture.picture end -->
+
+        <!-- Display furniture_category_picture.created_at start -->
+        <td>
+          <%= time_ago_in_words(furniture_category_picture.created_at) %> ago
+        </td>
+        <!-- Display furniture_category_picture.created_at end -->
+
+        <!-- Display furniture_category_picture.updated_at start -->
+        <td>
+          <%= time_ago_in_words(furniture_category_picture.updated_at) %> ago
+        </td>
+        <!-- Display furniture_category_picture.updated_at end -->
+
+        <td>
+          <a href="/furniture_category_pictures/<%= furniture_category_picture.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
