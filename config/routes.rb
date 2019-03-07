@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "apartments#index"
   # Routes for the Furniture category picture resource:
 
   # CREATE
